@@ -21,14 +21,23 @@ class User::RegistrationsController < Devise::RegistrationsController
   end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    binding.pry
+    @model = User::Operation::Create::Present.(params: nil, user: current_user)['model']
+    render html: cell(User::Cell::Edit, @model), layout: 'application'
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    result = User::Operation::Update.call(params: params.permit!, user: current_user)
+    if result.success?
+      sign_up(resource_name, result['model'])
+      bypass_sign_in resource, scope: resource_name if sign_in_after_change_password?
+      respond_with resource, location: after_update_path_for(resource)
+    else
+      render cell(User::Cell::Update, result['contract.default'])
+    end
+  end
 
   # DELETE /resource
   # def destroy
@@ -57,12 +66,12 @@ class User::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+    super(resource)
+  end
 
   # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_inactive_sign_up_path_for(resource)
+    super(resource)
+  end
 end

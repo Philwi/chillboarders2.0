@@ -22,8 +22,12 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# translation stuff
 gem 'rails-i18n', '~> 6.0.0' # For 6.0.0 or higher
 gem 'devise'
+gem 'devise-i18n'
+gem 'friendly_id', '~> 5.2.4'
+gem 'route_translator'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

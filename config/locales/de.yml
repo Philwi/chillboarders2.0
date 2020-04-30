@@ -173,6 +173,8 @@ de:
     sign_up: Anmelden
     sign_in: Einloggen
     sign_out: Ausloggen
+    user:
+      edit: Profil bearbeiten
   number:
     currency:
       format:

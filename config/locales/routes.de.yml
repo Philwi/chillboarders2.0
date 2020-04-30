@@ -1,0 +1,8 @@
+---
+de:
+  routes:
+    users: 'nutzer'
+    sign_up: 'anmelden'
+    sign_in: 'einloggen'
+    sign_out: ausloggen
+    edit: 'bearbeiten'
