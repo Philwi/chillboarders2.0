@@ -1,0 +1,15 @@
+.row
+  .col-lg.d-none.d-lg-block
+    .container
+      = image_tag("sign_in_image.jpg", class: "img-fluid", alt: "Image of a skateboard")
+  .col-lg.align-self-center
+    .container
+      = simple_form_for(@model, as: :user, url: user_registration_path) do |f|
+        = f.error_notification
+        .form-inputs
+          = f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email" }
+          = f.input :username, required: true
+          = f.input :password, required: true, hint: (I18n.t('.devise.shared.minimum_password_length', @minimum_password_length) if @minimum_password_length), input_html: { autocomplete: "new-password" }
+          = f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password" }
+        .form-actions
+          = f.button :submit, I18n.t('.navigation.sign_up'), class: 'btn btn-primary'

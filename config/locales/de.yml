@@ -8,6 +8,19 @@ de:
           has_one: Datensatz kann nicht gelöscht werden, da ein abhängiger %{record}-Datensatz
             existiert.
           has_many: Datensatz kann nicht gelöscht werden, da abhängige %{record} existieren.
+      models:
+        user:
+          attributes:
+            password:
+              not_the_same_passwords: Die angegebenen Passwörter stimmen nicht überein
+    models:
+      user: Nutzer
+    attributes:
+      user:
+        username: Nutzername
+        password: Passwort
+        password_confirmation: Passwort wiederholen
+        email: E-Mail
   date:
     abbr_day_names:
     - So

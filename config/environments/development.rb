@@ -3,8 +3,6 @@ Rails.application.configure do
 
   config.session_store :cache_store
 
-  config.i18n.available_locales = :de
-  config.i18n.default_locale = :de
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # In the development environment your application's code is reloaded on

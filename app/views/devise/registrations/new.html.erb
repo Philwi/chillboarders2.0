@@ -10,7 +10,7 @@
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                hint: (I18n.t('.devise.shared.minimum_password_length', @minimum_password_length) if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: true,
@@ -18,7 +18,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, I18n.t('.navigation.sign_up') %>
   </div>
 <% end %>
 

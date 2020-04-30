@@ -34,6 +34,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem "simple_form"
 # gem "formular", github: "trailblazer/formular"
 gem "dry-validation"
+gem 'reform-rails'
 
 gem "trailblazer", ">= 2.0.3"
 gem "trailblazer-rails"
@@ -42,6 +43,7 @@ gem "cells-rails"
 gem "cells-slim"
 gem "cells-erb"
 gem "slim-rails"
+gem 'material_icons'
 
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
@@ -63,10 +65,12 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
+  gem "minitest-rails", "~> 6.0.0"
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'database_cleaner-active_record'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

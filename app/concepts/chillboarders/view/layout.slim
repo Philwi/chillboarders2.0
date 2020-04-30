@@ -7,8 +7,7 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    //p#notice = notice
-    //p#alert = alert
     = cell(Chillboarders::Cell::Navigation, nil, current_user: options[:current_user])
     = flash_messages
-    = model
+    #layout_body_wrapper
+      = model
