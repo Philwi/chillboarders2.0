@@ -33,6 +33,12 @@ gem 'country_select'
 
 # map stuff
 gem 'leaflet-rails'
+gem 'open_street_map'
+
+# crawler stuff
+gem "wombat"
+gem 'watir-rails'
+gem 'chromedriver-helper'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

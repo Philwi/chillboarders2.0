@@ -2,7 +2,7 @@ class SpotsController < ApplicationController
 
   def index
     @spots = Spot.all
-    render html: cell(Spot::Cell::Index, @spots), layout: 'application'
+    render html: cell(Spot::Cell::Index, @spots, params: params), layout: 'application'
   end
 
   def new

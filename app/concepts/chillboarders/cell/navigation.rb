@@ -7,6 +7,8 @@ module Chillboarders
       include ActionView::Helpers::TranslationHelper
       include ::Cell::Translation
       include ::ActionView::Helpers::AssetTagHelper
+      include ActionView::Helpers::FormOptionsHelper
+      include ::SimpleForm::ActionViewExtensions::FormHelper
 
       SIGNED_IN_PATHS = [
         { text: I18n.t('.navigation.sign_out'), path: :destroy_user_session },
