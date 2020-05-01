@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   localized do
     scope "/:locale" do
       devise_for :users, controllers: { registrations: 'user/registrations' }
+
+      resources :spots, only: [:index, :new, :create, :edit, :update]
     end
   end
 end

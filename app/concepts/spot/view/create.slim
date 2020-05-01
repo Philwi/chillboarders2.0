@@ -1,0 +1,22 @@
+= leaflet_script
+.row
+  .col-lg.d-none.d-lg-block
+    .container
+      h3 = I18n.t('.spots.set_marker')
+      #mapid
+      = leaflet_map
+  .col-lg.align-self-center
+    .container
+      = simple_form_for(@model, as: :spot, url: spots_path) do |f|
+        = f.error_notification
+        .form-inputs
+          = f.input :title, required: true, autofocus: true
+          = f.input :description, as: :text, required: true
+          = f.input :type, collection: ::Spot::Util::Helper::SPOT_TYPES, include_blank: false, include_hidden: false, label_method: :titleize
+          = f.input :lat, as: :hidden
+          = f.input :lng, as: :hidden
+          = f.label :images, I18n.t('.misc.images_upload')
+          = f.file_field :images, multiple: true
+        .form-actions
+          = f.button :submit, I18n.t('.misc.save'), class: 'btn btn-primary'
+= spot_images

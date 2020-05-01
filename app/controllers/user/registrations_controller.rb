@@ -15,6 +15,7 @@ class User::RegistrationsController < Devise::RegistrationsController
     result = User::Operation::Create.call(params: params.permit!)
     if result.success?
       sign_up(resource_name, result['model'])
+      return redirect_to root_path
     else
       render cell(User::Cell::Create, result['contract.default'])
     end

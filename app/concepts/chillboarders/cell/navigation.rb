@@ -6,10 +6,12 @@ module Chillboarders
       include ::ActionView::Helpers::TagHelper
       include ActionView::Helpers::TranslationHelper
       include ::Cell::Translation
+      include ::ActionView::Helpers::AssetTagHelper
 
       SIGNED_IN_PATHS = [
         { text: I18n.t('.navigation.sign_out'), path: :destroy_user_session },
         { text: I18n.t('.navigation.user.edit'), path: :edit_user_registration },
+        { text: I18n.t('.navigation.spot.new'), path: :new_spot}
       ].freeze
 
       SIGNED_OUT_PATHS = [
@@ -31,6 +33,10 @@ module Chillboarders
         SIGNED_OUT_PATHS.map do |path|
           link_to(path[:text], path[:path], class: 'nav-link')
         end.join
+      end
+
+      def avatar
+        image_tag(options[:current_user].avatar, class: "img-fluid", alt: "Useravatar Image", style: 'height: 2em;')
       end
     end
   end

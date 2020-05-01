@@ -6,3 +6,6 @@ de:
     sign_in: 'einloggen'
     sign_out: ausloggen
     edit: 'bearbeiten'
+    spots: 'spot'
+    new: 'erstellen'
+    index: 'spots'

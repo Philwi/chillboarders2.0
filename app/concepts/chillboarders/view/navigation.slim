@@ -8,10 +8,10 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
         = I18n.t('.navigation.home')
         span.sr-only (current)
       li.nav-item
-        a.nav-link href="#"
-          = I18n.t('.navigation.spots')
+        = link_to(I18n.t('.navigation.spots'), spots_path, class: "nav-link")
       - if signed_in?
         = signed_in_paths
+        = avatar
       - else
         = signed_out_paths
     form.form-inline.my-2.my-lg-0

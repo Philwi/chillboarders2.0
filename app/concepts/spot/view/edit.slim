@@ -1,0 +1,17 @@
+.container
+  = leaflet_script
+  #mapid
+  = leaflet_map
+  = simple_form_for(@model, as: :spot, url: spot_path, method: :patch) do |f|
+    = f.error_notification
+    .form-inputs
+      = f.input :title, required: true, autofocus: true, disabled: true
+      = f.input :description, as: :text, required: true, disabled: true
+      = f.input :type, required: true, disabled: true
+      = f.input :lat, as: :hidden
+      = f.input :lng, as: :hidden
+      = f.label :images, I18n.t('.misc.images_upload')
+      = f.file_field :images, multiple: true
+    .form-actions
+      = f.button :submit, I18n.t('.misc.save'), class: 'btn btn-primary'
+  = spot_images

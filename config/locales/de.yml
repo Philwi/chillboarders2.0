@@ -27,6 +27,11 @@ de:
         description: Beschreibung
         favourite_trick: Lieblingstrick
         social_media: Social Media
+      spot:
+        title: Spottitel
+        description: Spotbeschreibung
+        type: Spottyp
+        images: Spotbilder
   date:
     abbr_day_names:
     - So
@@ -173,6 +178,7 @@ de:
       update: "%{model} aktualisieren"
   misc:
     save: Speichern
+    images_upload: Bilder hochladen
   navigation:
     home: Home
     spots: Spots
@@ -183,6 +189,8 @@ de:
     sign_out: Ausloggen
     user:
       edit: Profil bearbeiten
+    spot:
+      new: Neuen Spot erstellen
   number:
     currency:
       format:
@@ -239,6 +247,9 @@ de:
     precision:
       format:
         delimiter: ''
+  spots:
+    to_spot: Zum Spot
+    set_marker: Setze den Marker für die Ortsangabe
   support:
     array:
       last_word_connector: " und "

@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   friendly_id :username, use: :slugged
 
+  # Associations
   has_one_attached :avatar
-
+  has_many :spots
 end

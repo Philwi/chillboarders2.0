@@ -30,6 +30,10 @@ gem 'friendly_id', '~> 5.2.4'
 gem 'route_translator'
 gem 'country_select'
 
+
+# map stuff
+gem 'leaflet-rails'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
