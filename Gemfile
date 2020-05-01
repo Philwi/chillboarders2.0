@@ -28,6 +28,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'friendly_id', '~> 5.2.4'
 gem 'route_translator'
+gem 'country_select'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

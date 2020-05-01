@@ -1,7 +1,7 @@
 .row
   .col-lg.d-none.d-lg-block
     .container
-      = image_tag("sign_in_image.jpg", class: "img-fluid", alt: "Image of a skateboard")
+      = avatar_image
   .col-lg.align-self-center
     .container
       = simple_form_for(@model, as: :user, url: user_registration_path, method: :put) do |f|
@@ -9,14 +9,13 @@
         .form-inputs
           = f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email" }, disabled: true
           = f.input :username, required: true, disabled: true
-          = f.input :experience_level
+          = f.input :avatar
+          = f.input :experience_level, collection: SKILL_LEVEL, include_blank: false, include_hidden: false, label_method: :camelcase
           = f.input :city
-          = f.input :country
-          = f.input :description
+          = f.input :description, as: :text
           = f.input :favourite_trick
-          = f.input :social_media
-          = f.input :password, hint: (I18n.t('.devise.shared.minimum_password_length', @minimum_password_length) if @minimum_password_length), input_html: { autocomplete: "new-password" }
-          = f.input :password_confirmation, input_html: { autocomplete: "new-password" }
+          = f.input :social_media, as: :hidden
+          = social_media_input(f)
         .form-actions
-          = f.button :submit, I18n.t('.navigation.sign_up'), class: 'btn btn-primary'
+          = f.button :submit, I18n.t('.misc.save'), class: 'btn btn-primary'
 

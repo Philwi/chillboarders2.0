@@ -22,8 +22,7 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
   def edit
-    binding.pry
-    @model = User::Operation::Create::Present.(params: nil, user: current_user)['model']
+    @model = User::Operation::Update::Present.(params: nil, user: current_user)['model']
     render html: cell(User::Cell::Edit, @model), layout: 'application'
   end
 
@@ -35,7 +34,7 @@ class User::RegistrationsController < Devise::RegistrationsController
       bypass_sign_in resource, scope: resource_name if sign_in_after_change_password?
       respond_with resource, location: after_update_path_for(resource)
     else
-      render cell(User::Cell::Update, result['contract.default'])
+      render cell(User::Cell::Edit, result['contract.default'])
     end
   end
 

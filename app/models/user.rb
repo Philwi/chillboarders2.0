@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  store_accessor :social_media, :facebook, :instagram, :youtube
+
   extend FriendlyId
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -6,4 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   friendly_id :username, use: :slugged
+
+  has_one_attached :avatar
+
 end

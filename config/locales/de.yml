@@ -21,6 +21,12 @@ de:
         password: Passwort
         password_confirmation: Passwort wiederholen
         email: E-Mail
+        experience_level: Skill Level
+        city: Stadt
+        country: Land
+        description: Beschreibung
+        favourite_trick: Lieblingstrick
+        social_media: Social Media
   date:
     abbr_day_names:
     - So
@@ -165,6 +171,8 @@ de:
       create: "%{model} erstellen"
       submit: "%{model} speichern"
       update: "%{model} aktualisieren"
+  misc:
+    save: Speichern
   navigation:
     home: Home
     spots: Spots

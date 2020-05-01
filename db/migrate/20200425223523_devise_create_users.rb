@@ -39,7 +39,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :country
       t.string :description
       t.string :favourite_trick
-      t.string :social_media, array: true, default: []
+      t.jsonb :social_media, default: '{}'
 
       t.timestamps null: false
     end
