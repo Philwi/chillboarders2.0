@@ -2,16 +2,21 @@ module Spot::Cell
   class Index < Trailblazer::Cell
     include ::ActionView::Helpers::UrlHelper
     include ::ActionView::Helpers::AssetTagHelper
-    include ActionView::Helpers::JavaScriptHelper
+    include ::ActionView::Helpers::JavaScriptHelper
 
     def spots
-      model.map do |spot|
-        spot_card(spot)
-      end.join
+      if model.present?
+        model.map do |spot|
+          spot_card(spot)
+        end.join
+      else
+        content_tag(:h3, I18n.t('.spots.empty'))
+      end
     end
 
     def after_search
-      query = options[:params]['query']['search']
+      query = options.dig(:params, 'query' ,'search')
+      return false if query.blank?
       client = ::OpenStreetMap::Client.new
       result = client.search(q: query, format: 'json').first
       @lat = result['lat']
@@ -38,8 +43,21 @@ module Spot::Cell
             out.concat(content_tag(:div, class: 'card-body') do
               link_to I18n.t('.spots.to_spot'), edit_spot_path(spot.id), class: 'card-link'
             end)
+            out.concat comments(spot.id)
+            out.concat comment(spot.id)
           end)
         end
+      end
+    end
+
+    def comment(spot_id)
+      cell(::Comment::Cell::Create, ::Comment.new, spot_id: spot_id).()
+    end
+
+    def comments(spot_id)
+      spots = Spot.find(spot_id).comments
+      content_tag('div data-target="comment-list.commentList"') do
+        cell(::Comment::Cell::Index, spots).()
       end
     end
 
@@ -81,17 +99,27 @@ module Spot::Cell
       var lat = 0
 
       function getPosition(position){
-        "#{after_search}"
-
-        if (#{@lat}){
-          lat = #{@lat}
-          lng = #{@lng}
-        }else{
+        if (#{after_search}){
+          lat = #{@lat || 0}
+          lng = #{@lng || 0}
+        } else {
           lat = position.coords.latitude
           lng = position.coords.longitude
         };
 
         setMap();
+      }
+
+      function setBoundsAndTriggerReflexAction(map){
+        const bounds = map.getBounds();
+        const northEast = [bounds.getNorthEast().lat, bounds.getNorthEast().lng]
+        const southWest = [bounds.getSouthWest().lat, bounds.getSouthWest().lng]
+        const value = [northEast, southWest]
+
+        var event = new Event('change', { 'bubbles': true, 'cancelable': true });
+        var el = document.getElementById('bounds')
+        el.value = JSON.stringify(value);
+        el.dispatchEvent(event);
       }
 
       function setMap(){
@@ -102,10 +130,9 @@ module Spot::Cell
 
         eval("#{create_markers}")
 
-        var onClick = function(e) {
-          console.log(this.options);
-          window.open(this.options.slug);
-        };
+        map.on('zoomend', function() {
+          setBoundsAndTriggerReflexAction(map)
+        });
       }
       JAVASCRIPT
     end

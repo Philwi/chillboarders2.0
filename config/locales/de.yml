@@ -32,6 +32,8 @@ de:
         description: Spotbeschreibung
         type: Spottyp
         images: Spotbilder
+      comment:
+        description: Kommentar
   date:
     abbr_day_names:
     - So
@@ -251,6 +253,7 @@ de:
   spots:
     to_spot: Zum Spot
     set_marker: Setze den Marker für die Ortsangabe
+    empty: Hier gibt es leider keine Skatespots...
   support:
     array:
       last_word_connector: " und "

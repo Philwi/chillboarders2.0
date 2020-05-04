@@ -1,0 +1,8 @@
+.comment-list data-controller="comment-list"
+  = simple_form_for(model, as: :comment, url: comments_path, method: :post, html: { data: { type: "html", action: "ajax:success->comment-list#onPostSuccess" } } ) do |f|
+    = f.error_notification
+    .form-inputs
+      = f.input :description, as: :text
+      = f.input :spot_id, as: :hidden, input_html: { value: spot_id }
+    .form-actions
+      = f.button :submit, I18n.t('.misc.save'), class: 'btn btn-primary'

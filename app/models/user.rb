@@ -12,4 +12,5 @@ class User < ApplicationRecord
   # Associations
   has_one_attached :avatar
   has_many :spots
+  has_many :comments
 end
