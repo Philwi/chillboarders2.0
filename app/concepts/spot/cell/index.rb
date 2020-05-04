@@ -44,20 +44,15 @@ module Spot::Cell
               link_to I18n.t('.spots.to_spot'), edit_spot_path(spot.id), class: 'card-link'
             end)
             out.concat comments(spot.id)
-            out.concat comment(spot.id)
           end)
         end
       end
     end
 
-    def comment(spot_id)
-      cell(::Comment::Cell::Create, ::Comment.new, spot_id: spot_id).()
-    end
-
     def comments(spot_id)
       spots = Spot.find(spot_id).comments
       content_tag('div data-target="comment-list.commentList"') do
-        cell(::Comment::Cell::Index, spots).()
+        cell(::Comment::Cell::Index, spots, spot_id: spot_id).()
       end
     end
 

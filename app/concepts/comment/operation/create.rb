@@ -10,8 +10,8 @@ module Comment::Operation
     step :assign_associations
     step Contract::Persist()
 
-    def assign_associations(ctx, params:, model:, user:, **)
-      return false if (spot_id = params.dig('comment', 'spot_id')) && spot_id.blank?
+    def assign_associations(ctx, params:, model:, user:, spot_id: nil, **)
+      return false if (spot_id ||= params.dig('comment', 'spot_id')) && spot_id.blank?
       model.user = user
       model.spot = Spot.find(spot_id)
       ctx['model'] = model

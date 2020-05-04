@@ -1,8 +1,4 @@
-.comment-list data-controller="comment-list"
-  = simple_form_for(model, as: :comment, url: comments_path, method: :post, html: { data: { type: "html", action: "ajax:success->comment-list#onPostSuccess" } } ) do |f|
-    = f.error_notification
-    .form-inputs
-      = f.input :description, as: :text
-      = f.input :spot_id, as: :hidden, input_html: { value: spot_id }
-    .form-actions
-      = f.button :submit, I18n.t('.misc.save'), class: 'btn btn-primary'
+= javascript
+= label_tag('comment_description', I18n.t('.comment.create'), class: 'text')
+= text_area_tag(:description, '', data: { reflex: "change->Comment::Reflex::Create#form", spot_id: spot_id }, class: 'form-control text comment_description', )
+= button_tag(I18n.t('.misc.save'), class: 'btn btn-primary', onclick:"removeValueFromDescription()")

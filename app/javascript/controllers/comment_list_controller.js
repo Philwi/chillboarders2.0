@@ -8,4 +8,8 @@ export default class extends Controller {
     this.commentListTarget.innerHTML += xhr.response;
     this.descriptionTarget.value = "";
   }
+
+  log(event){
+    console.log(this.targets.find("description").value)
+  }
 }

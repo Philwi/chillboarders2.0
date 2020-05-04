@@ -34,6 +34,8 @@ de:
         images: Spotbilder
       comment:
         description: Kommentar
+  comment:
+    create: Kommentar erstellen
   date:
     abbr_day_names:
     - So
@@ -181,6 +183,7 @@ de:
   misc:
     save: Speichern
     images_upload: Bilder hochladen
+    comments: Kommentare
   navigation:
     home: Home
     spots: Spots

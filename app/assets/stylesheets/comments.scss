@@ -1,3 +1,10 @@
-// Place all the styles related to the comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@import 'variables';
+
+.collapse-comments{
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.comment-card{
+  margin: 0.5em 0;
+}
