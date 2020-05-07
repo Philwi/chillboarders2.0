@@ -19,6 +19,18 @@ module Spot::Cell
       SCRIPT
     end
 
+    def form
+      attributes = [
+        { attribute: :title, icon: 'subject', options: { required: true, autofocus: true, label: false, placeholder: I18n.t('.activerecord.attributes.spot.title')} },
+        { attribute: :description, icon: 'view_headline', options: { as: :text, required: true, label: false, placeholder: I18n.t('.activerecord.attributes.spot.description') } },
+        { attribute: :type, icon: 'face', type: :select, options: { collection: ::Spot::Util::Helper::SPOT_TYPES, include_blank: false, include_hidden: false, label_method: :titleize, label: false}},
+        { attribute: :images, icon: 'photo', type: :attachment, options: { multiple: true, class: 'form-control' } },
+        { attribute: :lat, icon: '', options: { as: :hidden }, hidden: true },
+        { attribute: :lng, icon: '', options: { as: :hidden }, hidden: true },
+      ]
+      ::Chillboarders::Cell::Form.(model, attributes: attributes, path: :spots, container_id: 'login_container', card_class: 'user_card sign_up', submit_text: I18n.t('.misc.save'), context: context)
+    end
+
     def leaflet_map
       javascript_tag <<-JAVASCRIPT
 

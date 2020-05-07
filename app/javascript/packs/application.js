@@ -12,6 +12,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("bootstrap")
 require("leaflet")
+require("material-icons")
 
 //= require jquery3
 //= require popper

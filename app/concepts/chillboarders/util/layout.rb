@@ -13,4 +13,3 @@ module Chillboarders::Util
     end
   end
 end
-

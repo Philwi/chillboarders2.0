@@ -1,10 +1,9 @@
 class SpotsController < ApplicationController
 
   def index
-    pp @elment
     # @bounds
     # => [[51.1356318430504, 13.931694030761719], [50.962967825970956, 13.544425964355469]]
-    @spots =
+    @spots ||=
       if @bounds
         Spot.where('lat BETWEEN ? AND ? AND lng BETWEEN ? AND ?', @bounds.second.first, @bounds.first.first, @bounds.second.second, @bounds.first.second)
       else

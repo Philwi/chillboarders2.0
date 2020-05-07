@@ -1,15 +1,33 @@
-.row
-  .col-lg.d-none.d-lg-block
-    .container
-      = image_tag("sign_in_image.jpg", class: "img-fluid", alt: "Image of a skateboard")
-  .col-lg.align-self-center
-    .container
-      = simple_form_for(@model, as: :user, url: user_registration_path) do |f|
-        = f.error_notification
-        .form-inputs
-          = f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email" }
-          = f.input :username, required: true
-          = f.input :password, required: true, hint: (I18n.t('.devise.shared.minimum_password_length', @minimum_password_length) if @minimum_password_length), input_html: { autocomplete: "new-password" }
-          = f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password" }
-        .form-actions
-          = f.button :submit, I18n.t('.navigation.sign_up'), class: 'btn btn-primary'
+#login_container
+  .container.h-100
+    .d-flex.justify-content-center.h-100
+      .user_card.sign_up
+        .d-flex.justify-content-center
+          .brand_logo_container
+            img.brand_logo alt="Logo" src="https://i.etsystatic.com/13221305/r/il/464f84/1381921866/il_570xN.1381921866_l5k0.jpg" /
+        .d-flex.justify-content-center.form_container
+          = simple_form_for(@model, as: :user, url: user_registration_path) do |f|
+            .form-inputs
+              .input-group.mb-3
+                .input-group-append
+                  span.input-group-text
+                    i.material-icons email
+                = f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email" }, label: false, class: 'form-control', placeholder: I18n.t('.activerecord.attributes.user.email')
+              .input-group.mb-3
+                .input-group-append
+                  span.input-group-text
+                    i.material-icons face
+                = f.input :username, required: true, label: false, class: 'form-control', placeholder: I18n.t('.activerecord.attributes.user.username')
+              .input-group.mb-2
+                .input-group-append
+                  span.input-group-text
+                    i.material-icons lock
+                = f.input :password, required: true, hint: (I18n.t('.devise.shared.minimum_password_length', @minimum_password_length) if @minimum_password_length), input_html: { autocomplete: "new-password" }, input_html: { autocomplete: "current-password" }, label: false, class: 'form-control', placeholder: I18n.t('.activerecord.attributes.user.password')
+              .input-group.mb-2
+                .input-group-append
+                  span.input-group-text
+                    i.material-icons lock
+                = f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password" }, label: false, class: 'form-control', placeholder: I18n.t('.activerecord.attributes.user.password_confirmation')
+            .form-actions
+              .d-flex.justify-content-center.mt-3.login_container
+                = f.button :submit, I18n.t('.navigation.sign_up'), class: 'btn login_btn'

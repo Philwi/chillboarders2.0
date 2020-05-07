@@ -9,6 +9,7 @@ module Chillboarders
       include ::Webpacker::Helper
       include ::Chillboarders::Util::Layout
 
+
     end
   end
 end

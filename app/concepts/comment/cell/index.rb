@@ -12,7 +12,7 @@ module Comment::Cell
     end
 
     def new_comment
-      cell(::Comment::Cell::Create, ::Comment.new, spot_id: spot_id).()
+      cell(::Comment::Cell::Create, ::Comment.new, spot_id: spot_id, spots: options[:spots]).()
     end
 
     def spot_id

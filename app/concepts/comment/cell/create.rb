@@ -10,6 +10,10 @@ module Comment::Cell
       options[:spot_id]
     end
 
+    def spots
+      options[:spots]
+    end
+
     def javascript
       javascript_tag <<-JAVASCRIPT
         function removeValueFromDescription(){

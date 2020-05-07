@@ -50,9 +50,9 @@ module Spot::Cell
     end
 
     def comments(spot_id)
-      spots = Spot.find(spot_id).comments
+      comments = Spot.find(spot_id).comments
       content_tag('div data-target="comment-list.commentList"') do
-        cell(::Comment::Cell::Index, spots, spot_id: spot_id).()
+        cell(::Comment::Cell::Index, comments, spot_id: spot_id, spots: model).()
       end
     end
 

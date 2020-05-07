@@ -5,6 +5,8 @@ module Comment::Reflex
 
     def form
       Comment.create(description: element['value'], user: current_user, spot: Spot.find(element.dataset['spot-id']))
+      ids = JSON.parse(element.dataset['spots']).map { |spot| spot['id'] }
+      @spots = Spot.where(id: ids)
     end
   end
 end
