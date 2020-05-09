@@ -5,7 +5,6 @@ module Spot::Operation
       step Contract::Build(constant: Spot::Contract::Update)
     end
 
-    step :check_user
     step Subprocess(Present)
     step Contract::Validate(key: 'spot')
     step Contract::Persist()

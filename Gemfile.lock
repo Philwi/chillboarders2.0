@@ -180,6 +180,7 @@ GEM
     ffi (1.12.2)
     friendly_id (5.2.5)
       activerecord (>= 4.0.0)
+    geocoder (1.6.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hirb (0.7.3)
@@ -457,6 +458,7 @@ DEPENDENCIES
   devise-i18n
   dry-validation
   friendly_id (~> 5.2.4)
+  geocoder
   jbuilder (~> 2.7)
   jquery-rails
   leaflet-rails

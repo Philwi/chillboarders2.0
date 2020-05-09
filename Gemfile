@@ -33,6 +33,7 @@ gem 'country_select'
 # map stuff
 gem 'leaflet-rails'
 gem 'open_street_map'
+gem 'geocoder'
 
 # crawler stuff
 gem "wombat"

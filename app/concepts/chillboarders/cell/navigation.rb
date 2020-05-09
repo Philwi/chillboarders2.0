@@ -38,7 +38,7 @@ module Chillboarders
       end
 
       def avatar
-        image_tag(options[:current_user].avatar, class: "img-fluid", alt: "Useravatar Image", style: 'height: 2em;')
+        image_tag(options[:current_user].avatar, class: "img-fluid", alt: "Useravatar Image", style: 'height: 2em; width: 2em;')
       end
     end
   end

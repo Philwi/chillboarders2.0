@@ -8,7 +8,6 @@ class SpotsController < ApplicationController
       if @bounds
         Spot.where('lat BETWEEN ? AND ? AND lng BETWEEN ? AND ?', @bounds.second.first, @bounds.first.first, @bounds.second.second, @bounds.first.second)
       else
-        # initial load all spots => there are set to map
         Spot.all
       end
     render html: cell(Spot::Cell::Index, @spots, params: params), layout: 'application'

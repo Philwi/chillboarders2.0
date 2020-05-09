@@ -16,4 +16,5 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
         = signed_out_paths
     = simple_form_for(:query, url: spots_path, method: :get, html: { class: 'form-horizontal form-inline' }, wrapper: :horizontal_form) do |f|
       = f.input :search, class: 'form-control', placeholder: I18n.t('.navigation.search_spots')
-      = f.button :submit,  I18n.t('.navigation.search'), class: 'btn btn-outline-success'
+      = f.button :button, class: 'btn btn-outline-success form-control' do
+        i.material-icons search
