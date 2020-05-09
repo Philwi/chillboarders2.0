@@ -93,6 +93,9 @@ module Spot::Cell
 
       var lng = 0
       var lat = 0
+      var markerChangeTimer;                //timer identifier
+      var doneChangeInterval = 5000;  //time in ms (5 seconds)
+
 
       function getPosition(position){
         if (#{after_search}){
@@ -106,17 +109,6 @@ module Spot::Cell
         setMap();
       }
 
-      function setBoundsAndTriggerReflexAction(map){
-        const bounds = map.getBounds();
-        const northEast = [bounds.getNorthEast().lat, bounds.getNorthEast().lng]
-        const southWest = [bounds.getSouthWest().lat, bounds.getSouthWest().lng]
-        const value = [northEast, southWest]
-
-        var event = new Event('change', { 'bubbles': true, 'cancelable': true });
-        var el = document.getElementById('bounds')
-        el.value = JSON.stringify(value);
-        el.dispatchEvent(event);
-      }
 
       function scrollToId(e){
         document.getElementById(e.target.options.id).scrollIntoView({behavior: 'smooth'});
@@ -130,12 +122,21 @@ module Spot::Cell
 
         eval("#{create_markers}")
 
-        map.on('zoomend', function() {
-          setBoundsAndTriggerReflexAction(map)
-        });
+        function setBoundsAndTriggerReflexAction(){
+          const bounds = map.getBounds();
+          const northEast = [bounds.getNorthEast().lat, bounds.getNorthEast().lng]
+          const southWest = [bounds.getSouthWest().lat, bounds.getSouthWest().lng]
+          const value = [northEast, southWest]
+
+          var event = new Event('change', { 'bubbles': true, 'cancelable': true });
+          var el = document.getElementById('bounds')
+          el.value = JSON.stringify(value);
+          el.dispatchEvent(event);
+        }
 
         map.on('move', function() {
-          setBoundsAndTriggerReflexAction(map)
+          clearTimeout(markerChangeTimer);
+          markerChangeTimer = setTimeout(setBoundsAndTriggerReflexAction, 3000);
         });
       }
       JAVASCRIPT

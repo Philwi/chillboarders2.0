@@ -10,6 +10,5 @@ export default class extends Controller {
   }
 
   log(event){
-    console.log(this.targets.find("description").value)
   }
 }
