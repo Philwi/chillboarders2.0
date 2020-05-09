@@ -155,6 +155,7 @@ de:
       model_invalid: 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'
       not_a_number: ist keine Zahl
       not_an_integer: muss ganzzahlig sein
+      no_permission: 'Für diese Aktion hast du leider keine Berechtigung. Melde dich doch einfach an :)'
       odd: muss ungerade sein
       other_than: darf nicht gleich %{count} sein
       present: darf nicht ausgefüllt werden

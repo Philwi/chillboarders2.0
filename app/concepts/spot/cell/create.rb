@@ -13,12 +13,6 @@ module Spot::Cell
       end.join
     end
 
-    def leaflet_script
-      <<-SCRIPT
-        <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-      SCRIPT
-    end
-
     def form
       attributes = [
         { attribute: :title, icon: 'subject', options: { required: true, autofocus: true, label: false, placeholder: I18n.t('.activerecord.attributes.spot.title')} },

@@ -43,7 +43,10 @@ class SpotsController < ApplicationController
   end
 
   def check_user
-    redirect_to :root if current_user.blank?
+    if current_user.blank?
+      flash[:error] = I18n.t('.errors.messages.no_permission')
+      redirect_to :root
+    end
   end
 
 end

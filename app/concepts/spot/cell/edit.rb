@@ -61,12 +61,6 @@ module Spot::Cell
       spot.obstacles.to_sentence
     end
 
-    def leaflet_script
-      <<-SCRIPT
-        <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-      SCRIPT
-    end
-
     def leaflet_map
       javascript_tag <<-JAVASCRIPT
 

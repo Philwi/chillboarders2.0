@@ -30,8 +30,6 @@ gem 'friendly_id', '~> 5.2.4'
 gem 'route_translator'
 gem 'country_select'
 
-gem 'material_icons'
-
 # map stuff
 gem 'leaflet-rails'
 gem 'open_street_map'

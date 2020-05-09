@@ -25,7 +25,7 @@ module Spot::Cell
     end
 
     def spot_card(spot)
-      content_tag(:div, class: 'card', style: 'width: 100%;') do
+      content_tag(:div, class: 'card', id: "spot-#{spot.id}", style: 'width: 100%;') do
         content_tag(:div, class: 'row') do
           output = ''
           output.concat(content_tag(:div, class: 'col-lg') do
@@ -81,15 +81,9 @@ module Spot::Cell
       out.concat content_tag(:p, spot.obstacles.to_sentence)
     end
 
-    def leaflet_script
-      <<-SCRIPT
-        <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-      SCRIPT
-    end
-
     def create_markers
       model.map.with_index do |spot, index|
-        "var marker#{index} = L.marker([#{spot.lat}, #{spot.lng}], slug = '#{spot.slug}').addTo(map); marker#{index}.on('click', 'onClick');"
+        "var marker#{index} = L.marker([#{spot.lat}, #{spot.lng}], {id: 'spot-#{spot.id}'}).on('click', scrollToId).addTo(map);"
       end.join
     end
 
@@ -122,6 +116,10 @@ module Spot::Cell
         var el = document.getElementById('bounds')
         el.value = JSON.stringify(value);
         el.dispatchEvent(event);
+      }
+
+      function scrollToId(e){
+        document.getElementById(e.target.options.id).scrollIntoView({behavior: 'smooth'});
       }
 
       function setMap(){

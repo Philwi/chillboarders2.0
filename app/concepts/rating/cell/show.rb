@@ -14,7 +14,11 @@ module Rating::Cell
 
     def avaerage_rating
       ratings = Rating.where(spot_id: options[:spot_id]).pluck(:rating)
-      ratings.sum / ratings.count
+      if ratings.present?
+        ratings.sum / ratings.count
+      else
+        6
+      end
     end
 
   end
