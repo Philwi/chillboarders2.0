@@ -56,14 +56,13 @@ module Spot::Cell
     def comments(spot_id)
       spot_comments = Comment.where(spot_id: spot_id).order(created_at: :desc)
       out = ''
-      out.concat content_tag(:h5, I18n.t('.misc.comments'))
       out.concat(content_tag('div data-target="comment-list.commentList"') do
         cell(::Comment::Cell::Index, spot_comments, spot_id: spot_id, spots: model).()
       end)
     end
 
     def rating(spot_id)
-      if rating = Rating.find_by(spot_id: spot_id, user_id: current_user.id)
+      if !current_user || rating = Rating.find_by(spot_id: spot_id, user_id: current_user&.id)
         cell(Rating::Cell::Show, nil, spot_id: spot_id).()
       else
         cell(Rating::Cell::Create, Rating.new, spot_id: spot_id, spots: model&.pluck(:id)).()

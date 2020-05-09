@@ -9,6 +9,26 @@
   background-position: center;
   color: $dark;
 }
+
+#big_container{
+  background-image: url('../images/sign_in_image.jpg');
+  height: 87em;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  color: $dark;
+}
+
+#spot_edit_container{
+  height: 94vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  color: $dark;
+}
+
 .user_card {
   width: 350px;
   margin-top: auto;
@@ -17,6 +37,27 @@
   position: relative;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+  .sign_up{
+    height: 475px;
+  }
+  .sign_in{
+    height: 400px;
+  }
+}
+.big_form_card {
+  width: 450px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: $white;
+  position: relative;
+  display: flex;
+  justify-content: right;
   flex-direction: column;
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

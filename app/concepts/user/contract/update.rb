@@ -5,7 +5,7 @@ class User::Contract::Update < Reform::Form
 
   property :email, writeable: false
   property :username, writeable: false
-  property :avatar
+  property :avatar, writeable: false
   property :experience_level
   property :city
   property :country
@@ -23,19 +23,4 @@ class User::Contract::Update < Reform::Form
     end
     super hash
   end
-
-  # property :password
-  # property :password_confirmation, virtual: true
-  # TODO: update password elsewhere
-  # validate do
-  #   if password.present? && password_confirmation.present?
-  #     errors.add(:password, I18n.t('.activerecord.errors.models.user.attributes.password.not_the_same_passwords')) if password != password_confirmation
-  #   end
-  #   if password.present? && password_confirmation.blank?
-  #     errors.add(:password_confirmation, I18n.t('.activerecord.errors.models.user.attributes.password.password_confirmation_empty'))
-  #   end
-  #   if password.blank? && password_confirmation.present?
-  #     errors.add(:password_confirmation, I18n.t('.activerecord.errors.models.user.attributes.password.password_empty'))
-  #   end
-  # end
 end

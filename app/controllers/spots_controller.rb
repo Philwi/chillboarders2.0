@@ -1,4 +1,5 @@
 class SpotsController < ApplicationController
+  before_action :check_user, only: [:create, :update]
 
   def index
     # @bounds
@@ -40,4 +41,9 @@ class SpotsController < ApplicationController
       render cell(Spot::Cell::Edit, result['contract.default'])
     end
   end
+
+  def check_user
+    redirect_to :root if current_user.blank?
+  end
+
 end

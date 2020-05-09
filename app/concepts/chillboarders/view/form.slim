@@ -1,10 +1,10 @@
-#login_container
+= content_tag(:div, id: container, style: "background-image: url(#{background_image})") do
   .container.h-100
     .d-flex.justify-content-center.h-100
-      .user_card.sign_up
+      = content_tag(:div, class: card_class) do
         .d-flex.justify-content-center
           .brand_logo_container
             img.brand_logo alt="Logo" src="https://i.etsystatic.com/13221305/r/il/464f84/1381921866/il_570xN.1381921866_l5k0.jpg" /
         .d-flex.justify-content-center.form_container
-          = simple_form_for(model, as: as_model, url: path) do |f|
+          = simple_form_for(model, as: as_model, url: path, method: method) do |f|
             = form(f)

@@ -19,11 +19,7 @@ module Comment::Cell
     end
 
     def comments_count
-      content_tag(:div, class: 'icon-with-number') do
-        out = ''
-        out.concat content_tag(:span, model.count, class: 'high-z-index')
-        out.concat content_tag(:i, 'comment', class: 'material-icons')
-      end
+      content_tag(:span, I18n.t(".misc.comments", amount: model.count), class: 'high-z-index')
     end
   end
 end

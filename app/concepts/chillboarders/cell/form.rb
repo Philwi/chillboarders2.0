@@ -18,8 +18,32 @@ module Chillboarders::Cell
       options[:submit_text]
     end
 
+    def background_image
+      if image = options[:background_image]
+        begin
+          rails_blob_path(image , disposition: "attachment", only_path: true)
+        rescue
+          '/images/sign_in_image.jpg'
+        end
+      else
+        '/images/sign_in_image.jpg'
+      end
+    end
+
+    def method
+      options[:method]
+    end
+
     def as_model
       (model.try(:model) || model).model_name.param_key.to_sym
+    end
+
+    def container
+      options[:container_id]
+    end
+
+    def card_class
+      options[:card_class]
     end
 
     def form(f)

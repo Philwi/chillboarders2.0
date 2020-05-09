@@ -184,8 +184,9 @@ de:
   misc:
     save: Speichern
     images_upload: Bilder hochladen
-    comments: "Kommentare"
+    comments: "%{amount} Kommentare"
     rating: "Rating"
+    address: Adresse
   navigation:
     home: Home
     spots: Spots

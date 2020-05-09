@@ -9,7 +9,7 @@ class Spot::Contract::Update < Reform::Form
   property :obstacles
   property :lat
   property :lng
-  property :images
+  property :images, writeable: false
 
   validates :lng, presence: true
   validates :lat, presence: true
