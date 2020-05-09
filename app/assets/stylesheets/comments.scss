@@ -8,3 +8,11 @@
 .comment-card{
   margin: 0.5em 0;
 }
+
+.icon-with-number{
+  position: relative;
+  .high-z-index{
+    position: absolute;
+    left: 28px;
+  }
+}

@@ -6,6 +6,7 @@ class Spot::Contract::Create < Reform::Form
   property :title
   property :description
   property :type
+  property :obstacles
   property :lat
   property :lng
   property :images
@@ -14,5 +15,6 @@ class Spot::Contract::Create < Reform::Form
   validates :description, presence: true, length: 6..5000
   validates :lng, presence: true
   validates :lat, presence: true
+  validates :obstacles, presence: true
   validates :images, presence: true
 end

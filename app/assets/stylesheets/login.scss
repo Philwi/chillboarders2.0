@@ -62,6 +62,11 @@
 .login_container {
   padding: 0 2rem;
 }
+
+.input-group{
+  margin-bottom: 0.5em;
+}
+
 .input-group-text {
   background: $dark !important;
   color: white !important;
@@ -79,4 +84,8 @@
 }
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
   background-color: $dark !important;
+}
+
+.form-group{
+  width: 80% !important;
 }

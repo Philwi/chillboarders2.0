@@ -6,6 +6,7 @@ class Spot < ApplicationRecord
   belongs_to :user
   has_many_attached :images
   has_many :comments
+  has_many :ratings
 
   friendly_id :title, use: :slugged
 end

@@ -3,6 +3,7 @@ module Spot::Cell
     include ::ActionView::Helpers::UrlHelper
     include ::ActionView::Helpers::AssetTagHelper
     include ::ActionView::Helpers::JavaScriptHelper
+    include ::Devise::Controllers::Helpers
 
     def spots
       if model.present?
@@ -38,41 +39,48 @@ module Spot::Cell
               inner.concat content_tag(:p, spot.description, class: 'card-text')
             end)
             out.concat(content_tag(:ul, class: 'list-group list-group-flush') do
-              content_tag(:li, spot.type, class: 'list-group-item')
+              list = ''
+              list.concat content_tag(:li, spot_type(spot), class: 'list-group-item')
+              list.concat content_tag(:li, spot_obstacles(spot), class: 'list-group-item')
+              list.concat content_tag(:li, rating(spot.id), class: 'list-group-item')
+              list.concat content_tag(:li, comments(spot.id), class: 'list-group-item')
             end)
             out.concat(content_tag(:div, class: 'card-body') do
               link_to I18n.t('.spots.to_spot'), edit_spot_path(spot.id), class: 'card-link'
             end)
-            out.concat comments(spot.id)
           end)
         end
       end
     end
 
     def comments(spot_id)
-      comments = Spot.find(spot_id).comments
-      content_tag('div data-target="comment-list.commentList"') do
-        cell(::Comment::Cell::Index, comments, spot_id: spot_id, spots: model).()
+      spot_comments = Comment.where(spot_id: spot_id).order(created_at: :desc)
+      out = ''
+      out.concat content_tag(:h5, I18n.t('.misc.comments'))
+      out.concat(content_tag('div data-target="comment-list.commentList"') do
+        cell(::Comment::Cell::Index, spot_comments, spot_id: spot_id, spots: model).()
+      end)
+    end
+
+    def rating(spot_id)
+      if rating = Rating.find_by(spot_id: spot_id, user_id: current_user.id)
+        cell(Rating::Cell::Show, nil, spot_id: spot_id).()
+      else
+        cell(Rating::Cell::Create, Rating.new, spot_id: spot_id, spots: model&.pluck(:id)).()
       end
     end
 
-    #def single_spot(spot)
-    #  content_tag(:div, class: 'card', style: 'width: 18rem;') do
-    #    output = ''
-    #    output.concat image_tag(spot&.images&.first || "sign_in_image.jpg", class: 'card-img-top', alt: 'Spotimage')
-    #    output.concat(content_tag(:div, class: 'card-body') do
-    #      inner = ''
-    #      inner.concat content_tag(:h5, spot.title, class: 'card-title')
-    #      inner.concat content_tag(:p, spot.description, class: 'card-text')
-    #    end)
-    #    output.concat(content_tag(:ul, class: 'list-group list-group-flush') do
-    #      content_tag(:li, spot.type, class: 'list-group-item')
-    #    end)
-    #    output.concat(content_tag(:div, class: 'card-body') do
-    #      link_to I18n.t('.spots.to_spot'), edit_spot_path(spot.id), class: 'card-link'
-    #    end)
-    #  end
-    #end
+    def spot_type(spot)
+      out = ''
+      out.concat content_tag(:h5, I18n.t('.activerecord.attributes.spot.type'))
+      out.concat content_tag(:p, spot.type.titleize)
+    end
+
+    def spot_obstacles(spot)
+      out = ''
+      out.concat content_tag(:h5, I18n.t('.activerecord.attributes.spot.obstacles'))
+      out.concat content_tag(:p, spot.obstacles.to_sentence)
+    end
 
     def leaflet_script
       <<-SCRIPT
@@ -126,6 +134,10 @@ module Spot::Cell
         eval("#{create_markers}")
 
         map.on('zoomend', function() {
+          setBoundsAndTriggerReflexAction(map)
+        });
+
+        map.on('move', function() {
           setBoundsAndTriggerReflexAction(map)
         });
       }

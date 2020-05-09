@@ -13,4 +13,5 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :spots
   has_many :comments
+  has_many :ratings
 end

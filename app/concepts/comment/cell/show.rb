@@ -2,7 +2,7 @@ module Comment::Cell
   class Show < Trailblazer::Cell
 
     def username
-      model.user.username
+      user.username
     end
 
     def description
@@ -11,6 +11,10 @@ module Comment::Cell
 
     def created_at
       I18n.l(model.created_at)
+    end
+
+    def user
+      @user ||= model.user
     end
 
   end

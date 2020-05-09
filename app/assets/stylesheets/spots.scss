@@ -1,3 +1,41 @@
 // Place all the styles related to the spots controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: left;
+  font-size: 2em;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover,
+.rating > span:hover ~ span {
+  color: transparent;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+  content: "\272A";
+  position: absolute;
+  left: 0;
+  color: red;
+}
+.filled-rating{
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: left;
+  font-size: 2em;
+}
+.filled-rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+
+.rating-star-filled{
+  color: red;
+}

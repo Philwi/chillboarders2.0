@@ -18,6 +18,10 @@ module Chillboarders::Cell
       options[:submit_text]
     end
 
+    def as_model
+      (model.try(:model) || model).model_name.param_key.to_sym
+    end
+
     def form(f)
       form_input = ''
       form_input.concat(

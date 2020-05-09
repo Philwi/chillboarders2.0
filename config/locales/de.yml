@@ -32,6 +32,7 @@ de:
         description: Spotbeschreibung
         type: Spottyp
         images: Spotbilder
+        obstacles: Obstacles
       comment:
         description: Kommentar
   comment:
@@ -183,7 +184,8 @@ de:
   misc:
     save: Speichern
     images_upload: Bilder hochladen
-    comments: Kommentare
+    comments: "Kommentare"
+    rating: "Rating"
   navigation:
     home: Home
     spots: Spots

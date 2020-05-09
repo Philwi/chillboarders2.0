@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_03_140518) do
+ActiveRecord::Schema.define(version: 2020_05_09_091923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,16 @@ ActiveRecord::Schema.define(version: 2020_05_03_140518) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.float "rating", null: false
+    t.bigint "user_id"
+    t.bigint "spot_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["spot_id"], name: "index_ratings_on_spot_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
+  end
+
   create_table "spots", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -67,6 +77,7 @@ ActiveRecord::Schema.define(version: 2020_05_03_140518) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
+    t.string "obstacles", default: [], array: true
     t.index ["slug"], name: "index_spots_on_slug", unique: true
     t.index ["user_id"], name: "index_spots_on_user_id"
   end

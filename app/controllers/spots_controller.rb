@@ -23,7 +23,7 @@ class SpotsController < ApplicationController
     if result.success?
       return redirect_to edit_spot_path(result['model'].id)
     else
-      render cell(Spot::Cell::Create, result['contract.default'])
+      render cell(Spot::Cell::Create, result['contract.default'].to_model)
     end
   end
 
