@@ -273,3 +273,6 @@ de:
       long: "%A, %d. %B %Y, %H:%M Uhr"
       short: "%d. %B, %H:%M Uhr"
     pm: nachmittags
+  user_site:
+    default_headline: MySkate - Headline
+    default_text: MySkate - Text

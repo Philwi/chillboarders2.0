@@ -12,6 +12,7 @@ module Chillboarders
 
       SIGNED_IN_PATHS = [
         { text: I18n.t('.navigation.spot.new'), path: :new_spot},
+        { text: I18n.t('.navigation.user_site.edit'), path: :edit_user_site},
         { text: I18n.t('.navigation.user.edit'), path: :edit_user_registration },
         { text: I18n.t('.navigation.sign_out'), path: :destroy_user_session },
       ].freeze
