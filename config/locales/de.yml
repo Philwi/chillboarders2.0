@@ -35,6 +35,13 @@ de:
         obstacles: Obstacles
       comment:
         description: Kommentar
+      user_site:
+        headline: Überschrift
+        text: Text
+        primary_color: Hauptfarbe
+        secondary_color: Zweitfarbe
+        tertiary_color: Drittfarbe
+        embedded_music_player_html: HTML für Player von Spotify oder Bandcamp z.B.
   comment:
     create: Kommentar erstellen
   date:
@@ -188,6 +195,7 @@ de:
     comments: "%{amount} Kommentare"
     rating: "Rating"
     address: Adresse
+    myskate_site: Zur MySkate
   navigation:
     home: Home
     spots: Spots
@@ -197,6 +205,9 @@ de:
     sign_up: Anmelden
     sign_in: Einloggen
     sign_out: Ausloggen
+    user_site:
+      edit: MySkate bearbeiten
+      index: MySkaters
     user:
       edit: Profil bearbeiten
     spot:

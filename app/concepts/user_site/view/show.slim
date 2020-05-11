@@ -1,0 +1,26 @@
+.my-skate-container
+  = user_avatar
+  //= content_tag(:div, class: 'my-skate-content', style: "background-color: #{secondary_color}; color: #{primary_color};") do
+  #my-skate-content style="color: #{primary_color}; background-color: #{secondary_color};"
+    .space-for-image
+    .user-profile
+      h3 = user.username
+      span.badge.badge-dark = user.experience_level&.titleize || 'Rookie'
+      .flex-list
+      ul style="color: #{tertiary_color}"
+        li = user.country
+        li = user.city
+      p = "'#{user.description}'"
+    .row
+      = images
+
+    .my-skate-site-input-content
+      h3 = model.headline
+      p style="color: #{tertiary_color}" = model.text
+
+    .additional-content-container
+      .comments
+        = comments
+      = music_player
+
+

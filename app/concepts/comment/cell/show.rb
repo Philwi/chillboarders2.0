@@ -2,7 +2,7 @@ module Comment::Cell
   class Show < Trailblazer::Cell
 
     def username
-      user.username
+      link_to(user.username, user_site_path(id: user.user_site.id))
     end
 
     def description

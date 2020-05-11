@@ -8,7 +8,16 @@ Rails.application.routes.draw do
 
       resources :spots, only: [:index, :new, :create, :edit, :update]
       resources :comments, only: [:create]
-      resources :user_sites, only: [:edit, :update, :show]
+
+      # without params[:id]
+      resource :user_sites do
+        get :edit
+        get :index
+        patch :update
+      end
+
+      resources :user_sites, only: [:show]
+
     end
   end
 end

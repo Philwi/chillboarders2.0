@@ -8,4 +8,5 @@ de:
     edit: 'bearbeiten'
     spots: 'spot'
     new: 'erstellen'
-    index: 'spots'
+    index: 'alle'
+    user_sites: 'myskate'

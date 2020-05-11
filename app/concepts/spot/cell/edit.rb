@@ -30,7 +30,7 @@ module Spot::Cell
         { attribute: :title, icon: 'subject', options: { required: true, autofocus: true, label: false, placeholder: I18n.t('.activerecord.attributes.spot.title'), disabled: true} },
         { attribute: :description, icon: 'view_headline', options: { as: :text, required: true, label: false, placeholder: I18n.t('.activerecord.attributes.spot.description'), disabled: true } },
         { attribute: :type, icon: 'fitness_center', type: :select, options: { collection: ::Spot::Util::Helper::SPOT_TYPES, include_blank: false, include_hidden: false, label_method: :titleize, label: false}},
-        { attribute: :obstacles, icon: 'menu_book', type: :select, options: { collection: ::Spot::Util::Helper::SPOT_OBSTACLES, include_blank: false, include_hidden: false, label_method: :titleize, label: false, input_html: { multiple: true }}},
+        { attribute: :obstacles, icon: 'menu_book', type: :select, options: { collection: ::Spot::Util::Helper::SPOT_OBSTACLES, include_blank: false, include_hidden: false, as: :check_boxes, label_method: :titleize, label: false, input_html: { multiple: true }}},
         { attribute: :images, icon: 'photo', type: :attachment, options: { multiple: true, class: 'form-control', accept: "image/png,image/gif,image/jpeg" } },
         { attribute: :lat, icon: '', options: { as: :hidden }, hidden: true },
         { attribute: :lng, icon: '', options: { as: :hidden }, hidden: true },

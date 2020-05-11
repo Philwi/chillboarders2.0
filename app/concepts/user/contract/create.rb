@@ -7,6 +7,11 @@ class User::Contract::Create < Reform::Form
   property :password
   property :password_confirmation, virtual: true
   property :username
+  property :experience_level
+
+  def experience_level=(value)
+    super 'rookie'
+  end
 
   validates :email, presence: true, format: { with: Rails.configuration.email_regex }
   validates :password, length: 6..50, presence: true

@@ -17,10 +17,11 @@
 @import "comments";
 @import "login";
 @import "spots";
+@import "user_sites";
 
 body{
-  background-color: #212121;
-  color: #f6f6f6;
+  background-color: $dark;
+  color: $white;
 }
 
 #layout_body_wrapper{
