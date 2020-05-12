@@ -1,4 +1,5 @@
 = javascript
 = label_tag('comment_description', I18n.t('.comment.create'), class: 'text')
-= text_area_tag(:description, '', data: { reflex: "change->Comment::Reflex::Create#form", spot_id: spot_id, spots: spots, user_site_id: user_site_id }, class: 'form-control text comment_description', )
-= button_tag(I18n.t('.misc.save'), class: 'btn btn-primary', onclick:"removeValueFromDescription()")
+= text_area_tag(:description, '', data: { reflex: "change->Comment::Reflex::Create#form", spot_id: spot_id, spots: spots, user_site_id: user_site_id, attachment_id: attachment_id }, class: 'form-control text comment_description', )
+.modal-closer data-controller='modal'
+  = button_tag(I18n.t('.misc.save'), class: 'btn btn-primary', onclick:"removeValueFromDescription()", data: { action: 'click->modal#closeModal' })

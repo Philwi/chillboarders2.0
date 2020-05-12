@@ -1,0 +1,10 @@
+#myskater-search
+
+  a.btn.btn-primary aria-controls="collapseSearchBar" aria-expanded="false" data-toggle="collapse" href="#collapseSearchBar" role="button"
+    i.material-icons search
+
+  #collapseSearchBar.collapse
+    = simple_form_for(:search, url: user_sites_path, method: :get) do |f|
+      = f.input :username, label: false, placeholder: I18n.t('.activerecord.attributes.user.username')
+      = f.input :city, label: false, placeholder: I18n.t('.activerecord.attributes.user.city')
+      = f.button :submit, I18n.t('.misc.search'), class: 'btn btn-primary'

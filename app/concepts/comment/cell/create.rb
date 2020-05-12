@@ -18,6 +18,10 @@ module Comment::Cell
       options[:user_site_id]
     end
 
+    def attachment_id
+      options[:attachment_id]
+    end
+
     def javascript
       javascript_tag <<-JAVASCRIPT
         function removeValueFromDescription(){

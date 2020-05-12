@@ -2,7 +2,7 @@ module Comment::Cell
   class Index < Trailblazer::Cell
 
     def new_comment
-      cell(::Comment::Cell::Create, ::Comment.new, spot_id: spot_id, spots: options[:spots], user_site_id: options[:user_site_id]).()
+      cell(::Comment::Cell::Create, ::Comment.new, spot_id: spot_id, spots: options[:spots], user_site_id: options[:user_site_id], attachment_id: options[:attachment_id]).()
     end
 
     def spot_id

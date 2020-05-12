@@ -14,6 +14,8 @@ Rails.application.routes.draw do
         get :edit
         get :index
         patch :update
+        get :modal_content
+        get :modal_close
       end
 
       resources :user_sites, only: [:show]

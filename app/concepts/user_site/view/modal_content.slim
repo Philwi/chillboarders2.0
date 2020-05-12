@@ -1,0 +1,8 @@
+.modal-content
+  .modal-header
+    = button_to(modal_close_user_sites_path, remote: true, class: 'close', data: { dismiss: 'modal'}, method: :get)
+      span aria-hidden="true"  &times;
+  .modal-body
+    = image_tag(model)
+    = cell(Comment::Cell::Index, Comment.where(active_storage_attachments_id: model.id).order(created_at: :desc), attachment_id: model.id).()
+    = button_to(I18n.t('.misc.close'), modal_close_user_sites_path, remote: true, class: 'btn btn-dark', data: { dismiss: 'modal'}, method: :get)

@@ -15,7 +15,7 @@ module User::Operation
     pass :attach_image_if_present
 
     def attach_image_if_present(ctx, model:, params:, **)
-      if image = params.dig('user', 'image')
+      if image = params.dig('user', 'avatar')
         model.avatar.attach(image)
       end
     end

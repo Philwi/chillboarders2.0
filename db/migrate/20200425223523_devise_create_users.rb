@@ -35,8 +35,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       ## Own Attributes
       t.string :username, null: false
       t.string :experience_level
-      t.string :city
-      t.string :country
+      t.string :city, default: ''
+      t.string :country, default: 'Germany'
       t.string :description
       t.string :favourite_trick
       t.jsonb :social_media, default: '{}'

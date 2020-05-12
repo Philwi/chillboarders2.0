@@ -10,7 +10,7 @@
 .myskate-user-image {
   position: relative;
   border-radius: 50%;
-  width: calc(33.333% - 1rem);
+  width: calc(33.333% + 6rem);
   max-width: 20em;
   display: flex;
   justify-content: center;
@@ -106,6 +106,7 @@
 #user-site-cards .row .col-sm-4{
   text-align: center;
   margin: 2em 0;
+  min-width: 400px;
 }
 
 #user-site-cards img{
@@ -153,4 +154,32 @@
 }
 #user-site-cards .card-footer-user-site .one-third.no-boarder{
   width: 33.333%;
+}
+
+#myskater-search{
+  margin-top: 3em;
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 25em;
+  i{
+    font-size: 2em;
+    cursor: pointer;
+    color: $dark;
+  }
+  .btn{
+    margin-bottom: 1em;
+  }
+}
+
+#modal-content .modal-content{
+  img{
+    height: 700px;
+    width: 100%;
+    object-fit: cover;
+  }
+  text-align: center;
+  height: 850px;
+  overflow: auto;
 }

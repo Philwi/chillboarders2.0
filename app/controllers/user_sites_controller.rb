@@ -1,7 +1,7 @@
 class UserSitesController < ApplicationController
 
   def index
-    model = UserSite.all.includes(:user)
+    model = UserSite.search_skater(params)
     render html: cell(UserSite::Cell::Index, model), layout: 'application'
   end
 
@@ -22,5 +22,12 @@ class UserSitesController < ApplicationController
   def show
     user_site = UserSite.find(params[:id])
     render cell(UserSite::Cell::Show, user_site)
+  end
+
+  def modal_content
+    @model = ActiveStorage::Attachment.find(params[:image])
+  end
+
+  def modal_close
   end
 end

@@ -33,7 +33,9 @@ module UserSite::Cell
     def images
       model.images.map do |image|
         content_tag(:div, class: 'col-lg-4') do
-          image_tag(image, class: 'img-fluid')
+          link_to(modal_content_user_sites_path(image: image), remote: true, data: {toggle: "modal", target: "#imageModal"}) do
+            image_tag(image, class: 'img-fluid')
+          end
         end
       end.join
     end

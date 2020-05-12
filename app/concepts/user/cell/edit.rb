@@ -4,7 +4,6 @@ module User::Cell
     include ::ActionView::Helpers::UrlHelper
     include ::ActionView::Helpers::AssetTagHelper
     include ActionView::Helpers::FormOptionsHelper
-    include SimpleForm::ActionViewExtensions::FormHelper
 
     SKILL_LEVEL = %w[rookie beginner intermediate advanced pro].freeze
     # if new social media appears - adjust it in user model store accessor and in contract
