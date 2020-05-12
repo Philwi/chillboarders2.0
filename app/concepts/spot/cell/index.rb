@@ -8,14 +8,13 @@ module Spot::Cell
     def spots
       if model.present?
         # get users location and just the near spots for performance reasons
-        #less_spots =
-        #  if model.count > 15 && (user_ip = request.remote_ip) && user_ip != '127.0.0.1'
-        #    results = Geocoder.search(user_ip)
-        #    model.where('lat BETWEEN ? AND ? AND lng BETWEEN ? AND ?', results.first.coordinates.first - (0.009 * 10), results.first.coordinates.first + (0.009 * 10), results.first.coordinates.second - (0.009 * 10), results.first.coordinates.second + (0.009 * 10))
-        #  end
+        less_spots =
+          if model.count > 15 && (user_ip = request.remote_ip) && user_ip != '127.0.0.1'
+            results = Geocoder.search(user_ip)
+            model.where('lat BETWEEN ? AND ? AND lng BETWEEN ? AND ?', results.first.coordinates.first - (0.009 * 10), results.first.coordinates.first + (0.009 * 10), results.first.coordinates.second - (0.009 * 10), results.first.coordinates.second + (0.009 * 10))
+          end
 
-        #(less_spots || model).map do |spot|
-        model.map do |spot|
+        (less_spots || model.first(15)).map do |spot|
           spot_card(spot)
         end.join
       else
@@ -54,7 +53,7 @@ module Spot::Cell
               list.concat content_tag(:li, comments(spot.id), class: 'list-group-item')
             end)
             out.concat(content_tag(:div, class: 'card-body') do
-              link_to I18n.t('.spots.to_spot'), edit_spot_path(spot.id), class: 'card-link'
+              link_to I18n.t('.spots.to_spot'), edit_spot_path(spot), class: 'card-link'
             end)
           end)
         end

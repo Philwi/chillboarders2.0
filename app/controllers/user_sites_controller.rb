@@ -20,7 +20,7 @@ class UserSitesController < ApplicationController
   end
 
   def show
-    user_site = UserSite.find(params[:id])
+    user_site = UserSite.find_by(slug: params[:id]) || UserSite.find_by(id: params[:id])
     render cell(UserSite::Cell::Show, user_site)
   end
 

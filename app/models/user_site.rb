@@ -1,9 +1,17 @@
 class UserSite < ApplicationRecord
+  extend FriendlyId
+
   has_many_attached :images
   has_many_attached :videos
 
   has_many :comments
   belongs_to :user
+
+  friendly_id :username, use: :slugged
+
+  def username
+    user.username
+  end
 
   class << self
     def search_skater(params)

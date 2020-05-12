@@ -195,7 +195,7 @@ de:
     comments: "%{amount} Kommentare"
     rating: "Rating"
     address: Adresse
-    myskate_site: Zur MySkate
+    board_site: Zum Board
     search: Suchen
     close: Schließen
   navigation:
@@ -208,8 +208,8 @@ de:
     sign_in: Einloggen
     sign_out: Ausloggen
     user_site:
-      edit: MySkate bearbeiten
-      index: MySkaters
+      edit: Board bearbeiten
+      index: Skater
     user:
       edit: Profil bearbeiten
     spot:
@@ -287,5 +287,5 @@ de:
       short: "%d. %B, %H:%M Uhr"
     pm: nachmittags
   user_site:
-    default_headline: MySkate - Headline
-    default_text: MySkate - Text
+    default_headline: Board - Headline
+    default_text: Board - Text

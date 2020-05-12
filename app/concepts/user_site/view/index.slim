@@ -9,7 +9,7 @@
             span.badge style=("color: #{user_site.secondary_color}; background-color: #{user_site.tertiary_color};") = user_site.user.experience_level&.titleize || 'Rookie'
             h5.card-title = user_site.user.username
             p.card-text = user_site.user.description
-            = link_to(I18n.t('.misc.myskate_site'), user_site_path(id: user_site.id), class: 'btn', style: "color: #{user_site.secondary_color}; background-color: #{user_site.tertiary_color};")
+            = link_to(I18n.t('.misc.board_site'), user_site_path(user_site), class: 'btn', style: "color: #{user_site.secondary_color}; background-color: #{user_site.tertiary_color};")
           .card-footer-user-site style=("color: #{user_site.secondary_color}; background-color: #{user_site.tertiary_color};")
             .one-third
               i.material-icons menu_book

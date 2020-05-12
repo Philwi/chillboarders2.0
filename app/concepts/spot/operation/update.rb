@@ -1,8 +1,12 @@
 module Spot::Operation
   class Update < Trailblazer::Operation
     class Present < Trailblazer::Operation
-      step Model(Spot, :find_by)
+      step :assign_model
       step Contract::Build(constant: Spot::Contract::Update)
+
+      def assign_model(ctx, params:, **)
+        ctx['model'] = Spot.find_by(slug: params[:id]) || Spot.find_by(id: params[:id])
+      end
     end
 
     step Subprocess(Present)
