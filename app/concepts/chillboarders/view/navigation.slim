@@ -1,4 +1,4 @@
-nav.navbar.navbar-expand-lg.navbar-light.bg-light
+nav.navbar.navbar-expand-xl.navbar-light.bg-light
   = link_to('Chillboarders', root_path, class: 'navbar-brand')
   button.navbar-toggler aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarTogglerDemo02" data-toggle="collapse" type="button"
     span.navbar-toggler-icon
@@ -7,11 +7,9 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
       li.nav-item.active
         = I18n.t('.navigation.home')
         span.sr-only (current)
-      li.nav-item
-        = link_to(I18n.t('.navigation.spots'), spots_path, class: "nav-link")
+      = common_paths
       - if signed_in?
         = signed_in_paths
-        = avatar
       - else
         = signed_out_paths
     = simple_form_for(:query, url: spots_path, method: :get, html: { class: 'form-horizontal form-inline' }, wrapper: :horizontal_form) do |f|
