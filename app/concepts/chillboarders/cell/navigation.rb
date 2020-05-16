@@ -62,16 +62,6 @@ module Chillboarders
           end
         end
       end
-
-      def avatar
-        avatar_image =
-          if options[:current_user].avatar.present?
-            options[:current_user].avatar
-          else
-            'sign_in_image'
-          end
-        image_tag(avatar_image, class: "img-fluid", alt: "Useravatar Image", style: 'height: 2em; width: 2em;')
-      end
     end
   end
 end

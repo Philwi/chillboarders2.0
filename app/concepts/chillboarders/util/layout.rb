@@ -5,7 +5,7 @@ module Chillboarders::Util
         name += ' alert-info' if name == 'notice'
         name = 'danger' if name == 'alert'
         content_tag(:div, class: "container alert alert-dismissable alert-#{name}") do
-          content_tag(:button, content_tag(:span, '', class: 'glyphicon glyphicon-remove'),
+          content_tag(:button, content_tag(:i, 'close', class: 'material-icons'),
                       class: 'close', data: { dismiss: 'alert' }) +
             simple_format(msg)
         end
