@@ -1,5 +1,6 @@
 = cell(::UserSite::Cell::Search).()
-#user-site-cards
+#user-site-cards data-controller="user-site" data-action="scroll@window->user-site#scroll"
+  = content_tag(:input, '', class: 'd-none', data: {target: 'user-site.params'}, value: params)
   .row
     - model.each do |user_site|
       .col-sm-4

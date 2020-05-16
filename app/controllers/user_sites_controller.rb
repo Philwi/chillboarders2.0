@@ -1,8 +1,8 @@
 class UserSitesController < ApplicationController
 
   def index
-    model = UserSite.search_skater(params)
-    render html: cell(UserSite::Cell::Index, model), layout: 'application'
+    @model ||= UserSite.search_skater(params).limit(6).order(:username)
+    render html: cell(UserSite::Cell::Index, @model, params: params), layout: 'application'
   end
 
   def edit

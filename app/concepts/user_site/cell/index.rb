@@ -12,5 +12,9 @@ module UserSite::Cell
         end
       image_tag(avatar_image, class: "img-fluid", alt: "Useravatar Image")
     end
+
+    def params
+      options.dig(:params).to_json
+    end
   end
 end
