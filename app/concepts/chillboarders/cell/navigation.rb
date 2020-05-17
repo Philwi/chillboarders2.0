@@ -68,7 +68,7 @@ module Chillboarders
             content_tag(:div, class: 'svg d-inline') do
               image_tag(path[:svg])
             end)
-            out.concat content_tag(:h5, path[:text], class: 'd-xl-none d-inline')
+            out.concat content_tag(:h5, I18n.t(path[:text]), class: 'd-xl-none d-inline')
           end
         end
       end
