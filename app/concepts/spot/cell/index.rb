@@ -116,7 +116,6 @@ module Spot::Cell
         setMap();
       }
 
-
       function scrollToId(e){
         document.getElementById(e.target.options.id).scrollIntoView({behavior: 'smooth'});
       }
