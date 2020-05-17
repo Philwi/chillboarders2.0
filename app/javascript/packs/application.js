@@ -5,7 +5,6 @@
 
 require("../../assets/stylesheets/application.scss")
 import 'leaflet/dist/leaflet.css';
-import 'material-icons/iconfont/material-icons.scss';
 
 require("@rails/ujs").start()
 require("turbolinks").start()
@@ -23,16 +22,5 @@ L.Icon.Default.mergeOptions({
   iconUrl: require('leaflet/dist/images/marker-icon.png'),
   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
-
-//= require jquery3
-//= require popper
-//= require bootstrap-sprockets
-//= require jquery_ujs
-// Uncomment to copy all static images under ../images to the output folder and reference
-// them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
-// or the `imagePath` JavaScript helper below.
-//
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
 
 import "controllers"
