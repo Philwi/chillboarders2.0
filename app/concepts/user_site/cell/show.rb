@@ -62,5 +62,46 @@ module UserSite::Cell
       end)
     end
 
+    def social_media
+      content_tag(:div, class: 'social_media') do
+        content_tag(:div, class: 'row') do
+          out = ''
+          out.concat facebook || ''
+          out.concat youtube || ''
+          out.concat instagram || ''
+        end
+      end
+    end
+
+    def facebook
+      if user.facebook.present?
+        content_tag(:div, class: 'col-md') do
+          link_to(user.facebook) do
+            image_tag('social_media/f_icon.png')
+          end
+        end
+      end
+    end
+
+    def instagram
+      if user.instagram.present?
+        content_tag(:div, class: 'col-md') do
+          link_to(user.instagram) do
+            image_tag('social_media/ig_icon.png')
+          end
+        end
+      end
+    end
+
+    def youtube
+      if user.youtube.present?
+        content_tag(:div, class: 'col-md') do
+          link_to(user.youtube) do
+            image_tag('social_media/yt_icon.png')
+          end
+        end
+      end
+    end
+
   end
 end

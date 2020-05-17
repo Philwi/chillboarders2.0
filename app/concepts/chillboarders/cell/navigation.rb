@@ -32,6 +32,10 @@ module Chillboarders
         options[:current_user].present?
       end
 
+      def self.user
+        binding.pry
+      end
+
       def common_paths
         COMMON_PATHS.map do |path|
           build_navigtion_link(path)
@@ -42,6 +46,11 @@ module Chillboarders
         SIGNED_IN_PATHS.map do |path|
           build_navigtion_link(path)
         end.join
+      end
+
+      def my_board_site
+        path = { text: I18n.t('.navigation.user_site.show'), path: user_site_path(current_user.user_site), svg: 'svgs/myboard.svg' }
+        build_navigtion_link(path)
       end
 
       def signed_out_paths

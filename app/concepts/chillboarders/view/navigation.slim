@@ -4,6 +4,8 @@ nav.navbar.navbar-expand-xl.navbar-light.bg-light
     span.navbar-toggler-icon
   #navbarTogglerDemo02.collapse.navbar-collapse
     ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+      - if signed_in?
+        = my_board_site
       = common_paths
       - if signed_in?
         = signed_in_paths

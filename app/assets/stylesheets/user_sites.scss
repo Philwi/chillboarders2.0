@@ -211,3 +211,17 @@
   height: 850px;
   overflow: auto;
 }
+
+.social_media{
+  width: 100%;
+  padding: 1em;
+  a{
+    display: block;
+    text-align: center;
+  }
+  img{
+    height: 40px !important;
+    width: 100% !important;
+    object-fit: contain !important;
+  }
+}

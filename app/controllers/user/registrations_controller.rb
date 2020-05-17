@@ -33,7 +33,7 @@ class User::RegistrationsController < Devise::RegistrationsController
     if result.success?
       sign_up(resource_name, result['model'])
       bypass_sign_in resource, scope: resource_name if sign_in_after_change_password?
-      respond_with resource, location: after_update_path_for(resource)
+      respond_with resource, location: user_site_path(result['model'].user_site)
     else
       render cell(User::Cell::Edit, result['contract.default'])
     end
