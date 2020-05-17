@@ -88,9 +88,16 @@ module Spot::Cell
       out.concat content_tag(:p, spot.obstacles.to_sentence)
     end
 
+    MARKER_IMAGES = [
+      { type: 'street', icon: 'streetIcon' },
+      { type: 'park', icon: 'parkIcon' },
+      { type: 'indoor_park', icon: 'indoorParkIcon' },
+    ]
+
     def create_markers
       model.map.with_index do |spot, index|
-        "var marker#{index} = L.marker([#{spot.lat}, #{spot.lng}], {id: 'spot-#{spot.id}'}).on('click', scrollToId).addTo(map);"
+        icon = MARKER_IMAGES.find { |image| image[:type] == spot.type }&.dig(:icon) || 'parkIcon'
+        "var marker#{index} = L.marker([#{spot.lat}, #{spot.lng}], {id: 'spot-#{spot.id}', icon: #{icon}}).on('click', scrollToId).addTo(map);"
       end.join
     end
 
@@ -103,6 +110,17 @@ module Spot::Cell
       var markerChangeTimer;                //timer identifier
       var doneChangeInterval = 5000;  //time in ms (5 seconds)
 
+      var skateIcon = L.Icon.extend({
+        options: {
+          iconSize:     [50, 50], // size of the icon
+          iconAnchor:   [51, 49], // point of the icon which will correspond to marker's location
+          popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        }
+      });
+
+      var streetIcon = new skateIcon({iconUrl: '/images/markers/street.svg'}),
+          parkIcon = new skateIcon({iconUrl: '/images/markers/park.svg'}),
+          indoorParkIcon = new skateIcon({iconUrl: '/images/indoor_park.svg'});
 
       function getPosition(position){
         if (#{after_search}){
