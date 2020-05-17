@@ -1,0 +1,20 @@
+#login_container
+  .container.h-100
+    .d-flex.justify-content-center.h-100
+      .user_card.sign_in
+        .d-flex.justify-content-center
+          .brand_logo_container
+            img.brand_logo alt="Logo" src="https://i.etsystatic.com/13221305/r/il/464f84/1381921866/il_570xN.1381921866_l5k0.jpg" /
+        .d-flex.justify-content-center.form_container
+          = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+            .form-inputs
+              .input-group.mb-3
+                .input-group-append
+                  span.input-group-text
+                    i.material-icons email
+                = f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" }, label: false, class: 'form-control', placeholder: I18n.t('.activerecord.attributes.user.email')
+            .form-actions
+              .d-flex.justify-content-center.mt-3.login_container
+                = f.button :submit, t(".send_me_reset_password_instructions"), class: 'btn login_btn'
+            .mt-4
+              = render "devise/shared/links"

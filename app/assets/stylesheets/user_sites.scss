@@ -11,16 +11,43 @@
   position: relative;
   border-radius: 50%;
   width: calc(33.333% + 6rem);
-  max-width: 20em;
+  width: 20em;
+  height: 20em;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
   z-index: 999;
+  object-fit: cover;
 }
 .space-for-image{
   height: 10em;
+}
+
+#my-skate-content .col-lg-4 .image-hover-text{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(68, 103, 124, 0.72);
+  color: #fff;
+  opacity: 0;
+  padding: 30%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  /* transition effect. not necessary */
+  transition: opacity .5s, visibility .5s;
+}
+#my-skate-content .col-lg-4 .image-hover-text ul{
+  list-style: none;
+}
+
+#my-skate-content .col-lg-4 .image-hover-text:hover{
+  visibility: visible;
+  opacity: 1;
 }
 
 #my-skate-content{
@@ -64,6 +91,7 @@
   padding: 0 5%;
 }
 #my-skate-content .col-lg-4{
+  position: relative;
   text-align: center;
   padding: 0;
   margin: 1em 0;

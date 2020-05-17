@@ -49,16 +49,16 @@ de:
     mailer:
       confirmation_instructions:
         action: Mein Konto bestätigen
-        greeting: Willkommen %{recipient}!
-        instruction: 'Folgen Sie dem untenstehenden Link, um Ihr Konto zu bestätigen:'
-        subject: Anleitung zur Bestätigung Ihres Kontos
+        greeting: Sei gegrüßt %{recipient}!
+        instruction: 'Du musst auf den Link unten so fest wie möglich drücken, um dein Konto zu aktivieren.'
+        subject: Chillboarders - Anleitung zur Bestätigung deines Bretts
       email_changed:
-        greeting: Hallo %{recipient}!
-        message: Wir schreiben Ihnen, um Sie darüber zu informieren, dass Ihre E-Mail-Adresse zu %{email} geändert wurde.
+        greeting: Grüße %{recipient}!
+        message: Wir schreiben Dir, um Dich darüber zu informieren, dass deine E-Mail-Adresse zu %{email} geändert wurde.
         subject: E-Mail-Adresse geändert
       password_change:
-        greeting: Hallo %{recipient}!
-        message: Wir schreiben Ihnen, um Sie darüber zu informieren, dass Ihr Passwort geändert wurde.
+        greeting: Grüße %{recipient}!
+        message: Wir schreiben Dir, um Dich darüber zu informieren, dass Dein Passwort geändert wurde.
         subject: Passwort geändert
       reset_password_instructions:
         action: Passwort ändern
@@ -84,7 +84,7 @@ de:
         new_password: Neues Passwort
       new:
         forgot_your_password: Haben Sie Ihr Passwort vergessen?
-        send_me_reset_password_instructions: Schicken Sie mir die Anleitung, mein Passwort zurückzusetzen
+        send_me_reset_password_instructions: Passwort zurückzusetzen
       no_token: Sie können sich nicht auf dieser Seite anmelden, wenn Sie nicht von einer Passwort-Zurücksetzen-E-Mail kommen. Wenn Sie von solch einer E-Mail kommen, überprüfen Sie bitte, ob Sie die gesamte URL verwendet haben.
       send_instructions: Sie erhalten in wenigen Minuten eine E-Mail mit der Anleitung, wie Sie Ihr Passwort zurücksetzen können.
       send_paranoid_instructions: Falls Ihre E-Mail-Adresse in unserer Datenbank existiert, erhalten Sie in wenigen Minuten eine E-Mail mit der Anleitung, wie Sie Ihr Passwort zurücksetzen können.

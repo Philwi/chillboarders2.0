@@ -34,7 +34,15 @@ module UserSite::Cell
       model.images.map do |image|
         content_tag(:div, class: 'col-lg-4') do
           link_to(modal_content_user_sites_path(image: image), remote: true, data: {toggle: "modal", target: "#imageModal"}) do
-            image_tag(image, class: 'img-fluid')
+            out = ''
+            out.concat image_tag(image, class: 'img-fluid')
+            out.concat(content_tag(:div, class: 'image-hover-text') do
+              content_tag(:ul) do
+                inner = ''
+                inner.concat content_tag(:li, Comment.where(active_storage_attachments_id: image.id).count.to_s)
+                inner.concat content_tag(:li, content_tag(:i, 'message', class: 'material-icons'))
+              end
+            end)
           end
         end
       end.join
