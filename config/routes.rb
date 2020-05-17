@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: "spots#index"
-  get '/:locale' => 'landing#index'
+  get '/:locale' => 'spots#index'
 
   localized do
     scope "/:locale" do
