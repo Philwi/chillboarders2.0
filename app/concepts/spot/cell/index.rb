@@ -120,7 +120,7 @@ module Spot::Cell
 
       var streetIcon = new skateIcon({iconUrl: '/images/markers/street.svg'}),
           parkIcon = new skateIcon({iconUrl: '/images/markers/park.svg'}),
-          indoorParkIcon = new skateIcon({iconUrl: '/images/indoor_park.svg'});
+          indoorParkIcon = new skateIcon({iconUrl: '/images/markers/indoor_park.svg'});
 
       function getPosition(position){
         if (#{after_search}){
