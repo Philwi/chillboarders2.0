@@ -21,3 +21,30 @@
 .navbar-nav{
   margin-left: auto;
 }
+
+.locale-switcher{
+  position: relative;
+}
+
+.locale-switcher .btn{
+  line-height: 2;
+}
+
+.locale-switcher .dropdown-menu{
+  position: absolute;
+}
+
+.locale-switcher .dropdown-menu li{
+  padding: 5px;
+  font-size: 1.2em;
+}
+
+.locale-switcher .dropdown-menu p{
+  display: inline;
+  margin-left: 5px;
+}
+
+.locale-switcher .dropdown-menu :hover{
+  background-color: $dark;
+  transition: 0.5s;
+}
