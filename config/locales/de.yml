@@ -210,6 +210,7 @@ de:
     user_site:
       edit: Board bearbeiten
       index: Skater
+      show: Mein Board anzeigen
     user:
       edit: Profil bearbeiten
     spot:

@@ -5,6 +5,7 @@
 
 require("../../assets/stylesheets/application.scss")
 import 'leaflet/dist/leaflet.css';
+import 'material-icons/iconfont/material-icons.scss';
 
 require("@rails/ujs").start()
 require("turbolinks").start()
