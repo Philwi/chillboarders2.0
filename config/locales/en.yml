@@ -1,33 +1,367 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
+---
 en:
-  hello: "Hello world"
+  '':
+    errors:
+      messages:
+        no_permission: No permission
+  activerecord:
+    attributes:
+      comment:
+        description: Comment
+      spot:
+        description: Spot description
+        images: Spot Images
+        obstacles: Obstacles
+        title: Spot Title
+        type: Spot Type
+      user:
+        city: City
+        country: Country
+        description: Description 
+        email: E-Mail
+        experience_level: Skill Level
+        favourite_trick: Favourite Trick
+        password: Password
+        password_confirmation: Password confirmation
+        social_media: Social Media
+        username: Username
+      user_site:
+        embedded_music_player_html: HTML for embed music player like bandcamp
+        headline: Headline
+        primary_color: Primary Color
+        secondary_color: Second Color
+        tertiary_color: Tertiary Color
+        text: Text
+    errors:
+      messages:
+        record_invalid: 'Validation failed: %{errors}'
+        restrict_dependent_destroy:
+          has_many: Cannot delete record because dependent %{record} exist
+          has_one: Cannot delete record because a dependent %{record} exists
+      models:
+        user:
+          attributes:
+            password:
+              not_the_same_passwords: Passwords are not the same
+    models:
+      user: User
+  comment:
+    create: Create Comment
+  date:
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    - 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+    - 
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+      x_years:
+        one: 1 year
+        other: "%{count} years"
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Second
+      year: Year
+  devise:
+    confirmations:
+      new:
+        resend_confirmation_instructions: Resend confirmation instructions
+    mailer:
+      confirmation_instructions:
+        action: Action
+        greeting: Greeting
+        instruction: Instruction
+      email_changed:
+        greeting: Greeting
+        message: Message
+      password_change:
+        greeting: Greeting
+        message: Message
+      reset_password_instructions:
+        action: Action
+        greeting: Greeting
+        instruction: Instruction
+        instruction_2: Instruction 2
+        instruction_3: Instruction 3
+      unlock_instructions:
+        action: Action
+        greeting: Greeting
+        instruction: Instruction
+        message: Message
+    passwords:
+      edit:
+        activerecord:
+          attributes:
+            user:
+              password: Password
+              password_confirmation: Password confirmation
+        devise:
+          passwords:
+            edit:
+              change_my_password: Change my password
+          shared:
+            minimum_password_length: Minimum password length
+      new:
+        activerecord:
+          attributes:
+            user:
+              email: Email
+        send_me_reset_password_instructions: Send me reset password instructions
+    registrations:
+      edit:
+        are_you_sure: Are you sure
+        cancel_my_account: Cancel my account
+        currently_waiting_confirmation_for_email: Currently waiting confirmation for email
+        leave_blank_if_you_don_t_want_to_change_it: Leave blank if you don t want to change it
+        title: Title
+        unhappy: Unhappy
+        update: Update
+        we_need_your_current_password_to_confirm_your_changes: We need your current password to confirm your changes
+      new:
+        sign_up: Sign up
+    sessions:
+      new:
+        activerecord:
+          attributes:
+            user:
+              email: Email
+              password: Password
+        sign_in: Sign in
+    shared:
+      links:
+        back: Back
+        forgot_your_password: Forgot your password
+        sign_in: Sign in
+        sign_in_with_provider: Sign in with provider
+        sign_up: Sign up
+      minimum_password_length: Minimum password length
+    unlocks:
+      new:
+        resend_unlock_instructions: Resend unlock instructions
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: must be accepted
+      blank: can't be blank
+      confirmation: doesn't match %{attribute}
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      model_invalid: 'Validation failed: %{errors}'
+      no_permission: Für diese Aktion hast du leider keine Berechtigung. Melde dich doch einfach an :)
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      not_saved: Not saved
+      odd: must be odd
+      other_than: must be other than %{count}
+      present: must be blank
+      required: must exist
+      taken: has already been taken
+      too_long:
+        one: is too long (maximum is 1 character)
+        other: is too long (maximum is %{count} characters)
+      too_short:
+        one: is too short (minimum is 1 character)
+        other: is too short (minimum is %{count} characters)
+      wrong_length:
+        one: is the wrong length (should be 1 character)
+        other: is the wrong length (should be %{count} characters)
+    template:
+      body: 'There were problems with the following fields:'
+      header:
+        one: 1 error prohibited this %{model} from being saved
+        other: "%{count} errors prohibited this %{model} from being saved"
+  hello: Hello world
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+  misc:
+    address: Address
+    board_site: My Board
+    close: Close
+    comments: "%{amount} Comments"
+    images_upload: Upload Images
+    rating: Rating
+    save: Save
+    search: Search
+  navigation:
+    home: Home
+    profile: Profile
+    search: Search
+    search_spots: Fill with location
+    sign_in: Log In
+    sign_out: Log Out
+    sign_up: Sign In
+    spot:
+      new: Create new Spot
+    spots: Spots
+    user:
+      edit: Edit User profile
+    user_site:
+      edit: Edit Board
+      index: Skater
+      show: Show my Board
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          eb: EB
+          gb: GB
+          kb: KB
+          mb: MB
+          pb: PB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  spots:
+    empty: There are no spots in the near...
+    set_marker: Set the marker where your spot is located
+    to_spot: Show Spot
+  support:
+    array:
+      last_word_connector: ", and "
+      two_words_connector: " and "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
+  user_site:
+    default_headline: Board - Headline
+    default_text: Board - Text

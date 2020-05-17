@@ -1,0 +1,12 @@
+---
+en:
+  routes:
+    users: 'user'
+    sign_up: 'sign_up'
+    sign_in: 'sign_in'
+    sign_out: sign_out
+    edit: edit
+    spots: spots
+    new: create
+    index: all
+    user_sites: 'board'

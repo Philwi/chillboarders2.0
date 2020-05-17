@@ -1,13 +1,43 @@
 ---
 de:
+  '':
+    errors:
+      messages:
+        no_permission: No permission
   activerecord:
+    attributes:
+      comment:
+        description: Kommentar
+      spot:
+        description: Spotbeschreibung
+        images: Spotbilder
+        obstacles: Obstacles
+        title: Spottitel
+        type: Spottyp
+      user:
+        city: Stadt
+        country: Land
+        description: Beschreibung
+        email: E-Mail
+        experience_level: Skill Level
+        favourite_trick: Lieblingstrick
+        password: Passwort
+        password_confirmation: Passwort wiederholen
+        social_media: Social Media
+        username: Nutzername
+      user_site:
+        embedded_music_player_html: HTML für Player von Spotify oder Bandcamp z.B.
+        headline: Überschrift
+        primary_color: Hauptfarbe
+        secondary_color: Zweitfarbe
+        tertiary_color: Drittfarbe
+        text: Text
     errors:
       messages:
         record_invalid: 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'
         restrict_dependent_destroy:
-          has_one: Datensatz kann nicht gelöscht werden, da ein abhängiger %{record}-Datensatz
-            existiert.
           has_many: Datensatz kann nicht gelöscht werden, da abhängige %{record} existieren.
+          has_one: Datensatz kann nicht gelöscht werden, da ein abhängiger %{record}-Datensatz existiert.
       models:
         user:
           attributes:
@@ -15,33 +45,6 @@ de:
               not_the_same_passwords: Die angegebenen Passwörter stimmen nicht überein
     models:
       user: Nutzer
-    attributes:
-      user:
-        username: Nutzername
-        password: Passwort
-        password_confirmation: Passwort wiederholen
-        email: E-Mail
-        experience_level: Skill Level
-        city: Stadt
-        country: Land
-        description: Beschreibung
-        favourite_trick: Lieblingstrick
-        social_media: Social Media
-      spot:
-        title: Spottitel
-        description: Spotbeschreibung
-        type: Spottyp
-        images: Spotbilder
-        obstacles: Obstacles
-      comment:
-        description: Kommentar
-      user_site:
-        headline: Überschrift
-        text: Text
-        primary_color: Hauptfarbe
-        secondary_color: Zweitfarbe
-        tertiary_color: Drittfarbe
-        embedded_music_player_html: HTML für Player von Spotify oder Bandcamp z.B.
   comment:
     create: Kommentar erstellen
   date:
@@ -54,7 +57,7 @@ de:
     - Fr
     - Sa
     abbr_month_names:
-    -
+    - 
     - Jan
     - Feb
     - Mär
@@ -80,7 +83,7 @@ de:
       long: "%e. %B %Y"
       short: "%e. %b"
     month_names:
-    -
+    - 
     - Januar
     - Februar
     - März
@@ -112,37 +115,113 @@ de:
         one: fast ein Jahr
         other: fast %{count} Jahre
       half_a_minute: eine halbe Minute
-      less_than_x_seconds:
-        one: weniger als eine Sekunde
-        other: weniger als %{count} Sekunden
       less_than_x_minutes:
         one: weniger als eine Minute
         other: weniger als %{count} Minuten
+      less_than_x_seconds:
+        one: weniger als eine Sekunde
+        other: weniger als %{count} Sekunden
       over_x_years:
         one: mehr als ein Jahr
         other: mehr als %{count} Jahre
-      x_seconds:
-        one: eine Sekunde
-        other: "%{count} Sekunden"
-      x_minutes:
-        one: eine Minute
-        other: "%{count} Minuten"
       x_days:
         one: ein Tag
         other: "%{count} Tage"
+      x_minutes:
+        one: eine Minute
+        other: "%{count} Minuten"
       x_months:
         one: ein Monat
         other: "%{count} Monate"
+      x_seconds:
+        one: eine Sekunde
+        other: "%{count} Sekunden"
       x_years:
         one: ein Jahr
         other: "%{count} Jahre"
     prompts:
-      second: Sekunde
-      minute: Minute
-      hour: Stunde
       day: Tag
+      hour: Stunde
+      minute: Minute
       month: Monat
+      second: Sekunde
       year: Jahr
+  devise:
+    confirmations:
+      new:
+        resend_confirmation_instructions: Resend confirmation instructions
+    mailer:
+      confirmation_instructions:
+        action: Action
+        greeting: Greeting
+        instruction: Instruction
+      email_changed:
+        greeting: Greeting
+        message: Message
+      password_change:
+        greeting: Greeting
+        message: Message
+      reset_password_instructions:
+        action: Action
+        greeting: Greeting
+        instruction: Instruction
+        instruction_2: Instruction 2
+        instruction_3: Instruction 3
+      unlock_instructions:
+        action: Action
+        greeting: Greeting
+        instruction: Instruction
+        message: Message
+    passwords:
+      edit:
+        activerecord:
+          attributes:
+            user:
+              password: Password
+              password_confirmation: Password confirmation
+        devise:
+          passwords:
+            edit:
+              change_my_password: Change my password
+          shared:
+            minimum_password_length: Minimum password length
+      new:
+        activerecord:
+          attributes:
+            user:
+              email: Email
+        send_me_reset_password_instructions: Send me reset password instructions
+    registrations:
+      edit:
+        are_you_sure: Are you sure
+        cancel_my_account: Cancel my account
+        currently_waiting_confirmation_for_email: Currently waiting confirmation for email
+        leave_blank_if_you_don_t_want_to_change_it: Leave blank if you don t want to change it
+        title: Title
+        unhappy: Unhappy
+        update: Update
+        we_need_your_current_password_to_confirm_your_changes: We need your current password to confirm your changes
+      new:
+        sign_up: Sign up
+    sessions:
+      new:
+        activerecord:
+          attributes:
+            user:
+              email: Email
+              password: Password
+        sign_in: Sign in
+    shared:
+      links:
+        back: Back
+        forgot_your_password: Forgot your password
+        sign_in: Sign in
+        sign_in_with_provider: Sign in with provider
+        sign_up: Sign up
+      minimum_password_length: Minimum password length
+    unlocks:
+      new:
+        resend_unlock_instructions: Resend unlock instructions
   errors:
     format: "%{attribute} %{message}"
     messages:
@@ -160,9 +239,10 @@ de:
       less_than: muss kleiner als %{count} sein
       less_than_or_equal_to: muss kleiner oder gleich %{count} sein
       model_invalid: 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'
+      no_permission: Für diese Aktion hast du leider keine Berechtigung. Melde dich doch einfach an :)
       not_a_number: ist keine Zahl
       not_an_integer: muss ganzzahlig sein
-      no_permission: 'Für diese Aktion hast du leider keine Berechtigung. Melde dich doch einfach an :)'
+      not_saved: Not saved
       odd: muss ungerade sein
       other_than: darf nicht gleich %{count} sein
       present: darf nicht ausgefüllt werden
@@ -182,6 +262,7 @@ de:
       header:
         one: 'Konnte %{model} nicht speichern: ein Fehler.'
         other: 'Konnte %{model} nicht speichern: %{count} Fehler.'
+  hello: Hello world
   helpers:
     select:
       prompt: Bitte wählen
@@ -190,31 +271,31 @@ de:
       submit: "%{model} speichern"
       update: "%{model} aktualisieren"
   misc:
-    save: Speichern
-    images_upload: Bilder hochladen
-    comments: "%{amount} Kommentare"
-    rating: "Rating"
     address: Adresse
     board_site: Zum Board
-    search: Suchen
     close: Schließen
+    comments: "%{amount} Kommentare"
+    images_upload: Bilder hochladen
+    rating: Rating
+    save: Speichern
+    search: Suchen
   navigation:
     home: Home
-    spots: Spots
-    search_spots: Gebe einen Ort ein
-    search: Suche
     profile: Profil
-    sign_up: Anmelden
+    search: Suche
+    search_spots: Gebe einen Ort ein
     sign_in: Einloggen
     sign_out: Ausloggen
+    sign_up: Anmelden
+    spot:
+      new: Neuen Spot erstellen
+    spots: Spots
+    user:
+      edit: Profil bearbeiten
     user_site:
       edit: Board bearbeiten
       index: Skater
       show: Mein Board anzeigen
-    user:
-      edit: Profil bearbeiten
-    spot:
-      new: Neuen Spot erstellen
   number:
     currency:
       format:
@@ -260,9 +341,11 @@ de:
           byte:
             one: Byte
             other: Bytes
+          eb: EB
           gb: GB
           kb: KB
           mb: MB
+          pb: PB
           tb: TB
     percentage:
       format:
@@ -272,9 +355,9 @@ de:
       format:
         delimiter: ''
   spots:
-    to_spot: Zum Spot
-    set_marker: Setze den Marker für die Ortsangabe
     empty: Hier gibt es leider keine Skatespots...
+    set_marker: Setze den Marker für die Ortsangabe
+    to_spot: Zum Spot
   support:
     array:
       last_word_connector: " und "
