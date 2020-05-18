@@ -14,7 +14,8 @@ figure.spot-description-content
   i.material-icons mouse
 
 .address-section
-  i.material-icons place
+  = link_to(spot_wego_here, target: :_blank) do
+    i.material-icons place
   h3 = I18n.t('.misc.address')
   p = address
 

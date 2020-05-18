@@ -25,6 +25,10 @@ module Spot::Cell
       client.reverse(format: 'json', lat: spot.lat, lon: spot.lng)['display_name']
     end
 
+    def spot_wego_here
+      "https://share.here.com/l/#{model.lat},#{model.lng}?z=13&p=yes"
+    end
+
     def form
       attributes = [
         { attribute: :title, icon: 'subject', options: { required: true, autofocus: true, label: false, placeholder: I18n.t('.activerecord.attributes.spot.title'), disabled: true} },

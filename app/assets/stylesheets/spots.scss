@@ -68,6 +68,7 @@ figure{
   padding: 10%;
   padding-bottom: calc(25%);
   background-color: #ffffff;
+  min-height: 30em;
 }
 
 .spot-description-content h3 {
@@ -147,11 +148,12 @@ figure{
 
 .address-section{
   text-align: center;
-  padding: 10em 5em;
+  padding: 5em;
   font-family: 'Lato', Arial, sans-serif;
   background-color: $primary;
   color: $dark;
   height: 50vh;
+  min-height: 25em;
   text-align: center;
 }
 .address-section i{
