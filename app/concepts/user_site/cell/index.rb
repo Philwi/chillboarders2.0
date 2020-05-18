@@ -10,7 +10,7 @@ module UserSite::Cell
         else
           'sign_in_image.jpg'
         end
-      image_tag(avatar_image, class: "img-fluid", alt: "Useravatar Image")
+      image_tag(avatar_image.variant(resize_to_limit: [350, 350]), class: "img-fluid", alt: "Useravatar Image")
     end
 
     def params
