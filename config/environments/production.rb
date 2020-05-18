@@ -118,4 +118,7 @@ Rails.application.configure do
   }
   config.action_mailer.default_url_options = { :host => 'chillboarders.herokuapp.com' }
   config.active_storage.service = :amazon
+
+  config.action_cable.url = 'wss://chillboarders.herokuapp.com/cable'
+  config.action_cable.allowed_request_origins = [ 'https://chillboarders.herokuapp.com', /http:\/\/chillboarders.herokuapp.com.*/ ]
 end
