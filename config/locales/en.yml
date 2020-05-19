@@ -283,6 +283,7 @@ en:
     search: Search
   navigation:
     home: Home
+    notifications: Notifications
     profile: Profile
     search: Search
     search_spots: Fill with location

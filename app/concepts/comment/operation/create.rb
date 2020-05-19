@@ -1,20 +1,23 @@
 module Comment::Operation
   class Create < Trailblazer::Operation
-    class Present < Trailblazer::Operation
-      step Model(Comment, :new)
-      step Contract::Build(constant: Comment::Contract::Create)
+
+    step :persist
+    pass ->(ctx, description:, spot:, user_site:, active_storage_attachments_id:, user:, **) do
+      Notification::Operation::Create.(
+        params: nil, description: description, spot: spot,
+        user_site: user_site, active_storage_attachments_id: active_storage_attachments_id,
+        user: user
+      )
     end
 
-    step Subprocess(Present)
-    step Contract::Validate(key: 'comment')
-    step :assign_associations
-    step Contract::Persist()
-
-    def assign_associations(ctx, params:, model:, user:, spot_id: nil, **)
-      return false if (spot_id ||= params.dig('comment', 'spot_id')) && spot_id.blank?
-      model.user = user
-      model.spot = Spot.find(spot_id)
-      ctx['model'] = model
+    def persist(ctx, description:, spot:, user_site:, active_storage_attachments_id:, user:, **)
+      Comment.create(
+        description: description,
+        user: user,
+        spot: spot,
+        user_site: user_site,
+        active_storage_attachments_id: active_storage_attachments_id
+      )
     end
   end
 end

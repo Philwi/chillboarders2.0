@@ -284,6 +284,7 @@ de:
   navigation:
     home: Home
     profile: Profil
+    notifications: Benachrichtigungen
     search: Suche
     search_spots: Gebe einen Ort ein
     sign_in: Einloggen
@@ -298,6 +299,10 @@ de:
       edit: Board bearbeiten
       index: Skater
       show: Mein Board anzeigen
+  notifications:
+    user_site_comment: "%{user} hat etwas an dein Board gepostet!"
+    spot_comment: "%{user} hat auf deinem Spot %{spot} etwas gepostet!"
+    attachment_comment: "%{user} hat ein Bild auf deinem Board kommentiert!"
   number:
     currency:
       format:

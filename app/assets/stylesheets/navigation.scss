@@ -3,10 +3,10 @@
 
 .navbar-nav{
   .svg img{
-    height: 100px;
-    width: 100px;
-    padding: 20px;
-    margin: 0px 20px;
+    height: 60px;
+    width: 60px;
+    padding: 5px;
+    margin: 0px 1vw;
   }
   h5{
     text-transform: uppercase;
@@ -47,4 +47,49 @@
 .locale-switcher .dropdown-menu :hover{
   background-color: $dark;
   transition: 0.5s;
+}
+
+.notification{
+  position: relative;
+}
+
+.notification .notification-alert{
+  position: absolute;
+  top: 1em;
+  left: 2em;
+}
+
+.notification .dropdown-menu{
+  background-color: $white;
+  width: 32em;
+  padding: 0;
+}
+
+
+.notification .dropdown-menu li{
+  background-color: $white;
+  padding: 0.5em;
+}
+.notification .dropdown-menu small{
+  margin-left: 1em;
+}
+
+.notification .dropdown-menu li .mark_as_read{
+  float: right;
+  margin-right: 1em;
+  margin-top: 5px;
+}
+
+.notification .dropdown-menu :hover{
+  background-color: $white;
+}
+
+.navbar-nav .dropdown-menu{
+  background-color: $white;
+}
+
+.notification .notification_image{
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
 }

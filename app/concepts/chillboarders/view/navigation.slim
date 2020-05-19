@@ -9,6 +9,8 @@ nav.navbar.navbar-expand-xl.navbar-light.bg-light
       = common_paths
       - if signed_in?
         = signed_in_paths
+        #notification data-controller="Notification::Reflex::Update" data-reflex-root= ".notification-badge, .notification-list, .notification-alert"
+          = notifications
       - else
         = signed_out_paths
       = simple_form_for(:query, url: spots_path, method: :get, html: { class: 'form-horizontal form-inline' }, wrapper: :horizontal_form) do |f|

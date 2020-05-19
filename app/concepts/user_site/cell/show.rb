@@ -76,7 +76,7 @@ module UserSite::Cell
     def facebook
       if user.facebook.present?
         content_tag(:div, class: 'col-md') do
-          link_to(user.facebook) do
+          link_to(user.facebook, target: :_blank) do
             image_tag('social_media/f_icon.png')
           end
         end
@@ -86,7 +86,7 @@ module UserSite::Cell
     def instagram
       if user.instagram.present?
         content_tag(:div, class: 'col-md') do
-          link_to(user.instagram) do
+          link_to(user.instagram, target: :_blank) do
             image_tag('social_media/ig_icon.png')
           end
         end
@@ -96,7 +96,7 @@ module UserSite::Cell
     def youtube
       if user.youtube.present?
         content_tag(:div, class: 'col-md') do
-          link_to(user.youtube) do
+          link_to(user.youtube, target: :_blank) do
             image_tag('social_media/yt_icon.png')
           end
         end

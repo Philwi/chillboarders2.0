@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_12_185705) do
+ActiveRecord::Schema.define(version: 2020_05_18_192951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,22 @@ ActiveRecord::Schema.define(version: 2020_05_12_185705) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string "type", null: false
+    t.integer "from_user_id"
+    t.boolean "seen", default: false
+    t.bigint "user_id"
+    t.bigint "user_site_id"
+    t.bigint "spot_id"
+    t.bigint "active_storage_attachments_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["active_storage_attachments_id"], name: "index_notifications_on_active_storage_attachments_id"
+    t.index ["spot_id"], name: "index_notifications_on_spot_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+    t.index ["user_site_id"], name: "index_notifications_on_user_site_id"
   end
 
   create_table "ratings", force: :cascade do |t|
