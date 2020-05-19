@@ -171,3 +171,14 @@ figure{
 .address-section p{
   margin-top: 2em;
 }
+
+.carousel-item{
+  text-align: center;
+}
+
+.carousel-item{
+  .img-fluid{
+    height: 100%;
+    width: auto;
+  }
+}

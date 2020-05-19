@@ -34,7 +34,8 @@ body{
   height: 94vh;
 }
 .card-img-top{
-  max-height: 60vh ;
+  max-height: 60vh;
+  object-fit: cover;
 }
 
 .list-group-flush .list-group-item{
