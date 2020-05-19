@@ -160,7 +160,7 @@ module Spot::Cell
 
         map.on('move', function() {
           clearTimeout(markerChangeTimer);
-          markerChangeTimer = setTimeout(setBoundsAndTriggerReflexAction, 3000);
+          markerChangeTimer = setTimeout(setBoundsAndTriggerReflexAction, 150);
         });
       }
       JAVASCRIPT
