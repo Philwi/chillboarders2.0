@@ -5,8 +5,10 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :confirmable, :lockable, :trackable
+         :recoverable, :rememberable, :validatable
+
+# doesnt work actually, uncomment me if you have an own domain
+#:confirmable, :lockable, :trackable
 
   friendly_id :username, use: :slugged
 
