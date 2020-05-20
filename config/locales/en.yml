@@ -41,6 +41,8 @@ en:
       models:
         user:
           attributes:
+            username_already_taken: Username is already taken
+            email_already_taken: E-Mail is already taken
             password:
               not_the_same_passwords: Passwords are not the same
     models:

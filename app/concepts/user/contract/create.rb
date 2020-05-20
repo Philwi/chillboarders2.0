@@ -22,6 +22,14 @@ class User::Contract::Create < Reform::Form
     if password.present? && password_confirmation.present?
       errors.add(:password, I18n.t('.activerecord.errors.models.user.attributes.password.not_the_same_passwords')) if password != password_confirmation
     end
+
+    if User.where(username: username).present?
+      errors.add(:username, I18n.t('.activerecord.errors.models.user.attributes.username_already_taken'))
+    end
+
+    if User.where(email: email).present?
+      errors.add(:email, I18n.t('.activerecord.errors.models.user.attributes.email_already_taken'))
+    end
   end
 
 end
