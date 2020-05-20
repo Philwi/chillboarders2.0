@@ -14,6 +14,7 @@ module Chillboarders
       COMMON_PATHS = [
         { text: '.navigation.spots', path: :spots, class: 'nav-link', svg: 'svgs/spot.svg' },
         { text: '.navigation.user_site.index', path: :user_sites, svg: 'svgs/skaters.svg' },
+        { text: '.navigation.news', path: :rss_feeds, svg: 'svgs/news.svg' }
       ].freeze
 
       SIGNED_IN_PATHS = [

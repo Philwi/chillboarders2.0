@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       resources :spots, only: [:index, :new, :create, :edit, :update]
       resources :comments, only: [:create]
 
+      resources :rss_feeds, only: [:index]
+
       # without params[:id]
       resource :user_sites do
         get :edit

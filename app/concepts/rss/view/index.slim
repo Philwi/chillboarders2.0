@@ -1,0 +1,11 @@
+#rss-feed
+  - if thrasher.count > 0
+    .row
+      - thrasher.each do |feed|
+          .col-md-4
+            .card
+              .card-body
+                h5 = feed.title
+                = feed.description
+              .card-footer
+                = link_to(I18n.t('.feed.to_source'),feed.link, class: 'btn btn-dark', target: :_blank)
