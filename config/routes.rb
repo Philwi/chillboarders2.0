@@ -20,8 +20,8 @@ Rails.application.routes.draw do
         get :modal_close
       end
 
+      resources :settings, only: [:index]
       resources :user_sites, only: [:show]
-
     end
   end
 end

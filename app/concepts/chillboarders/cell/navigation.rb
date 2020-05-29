@@ -19,9 +19,10 @@ module Chillboarders
 
       SIGNED_IN_PATHS = [
         { text: '.navigation.spot.new', path: :new_spot, svg: 'svgs/spots.svg' },
-        { text: '.navigation.user_site.edit', path: :edit_user_sites, svg: 'svgs/skater.svg' },
-        { text: '.navigation.user.edit', path: :edit_user_registration, svg: 'svgs/edit.svg' },
-        { text: '.navigation.sign_out', path: :destroy_user_session, svg: 'svgs/logout.svg' },
+        { text: '.navigation.settings', path: :settings, svg: 'svgs/settings.svg' },
+        #{ text: '.navigation.user_site.edit', path: :edit_user_sites, svg: 'svgs/skater.svg' },
+        #{ text: '.navigation.user.edit', path: :edit_user_registration, svg: 'svgs/edit.svg' },
+        #{ text: '.navigation.sign_out', path: :destroy_user_session, svg: 'svgs/logout.svg' },
       ].freeze
 
       SIGNED_OUT_PATHS = [
@@ -72,16 +73,20 @@ module Chillboarders
                 inner_nav.concat content_tag(:h5, I18n.t(path[:text]), class: 'd-xl-none d-inline notification-badge')
               end)
               inner.concat(content_tag(:ul, class: 'dropdown-menu notification-list') do
-                user_notifications.map do |notification|
-                  user = User.find_by(id: notification.from_user_id)
-                  spot = notification.spot
-                  content_tag(:li, class: 'list-group-item list-group-item-action') do
-                    notification_out = ''
-                    notification_out.concat image_tag(Chillboarders::Util::Navigation::NOTIFICATION_IMAGE[notification.type], class: 'notification_image d-inline')
-                    notification_out.concat content_tag(:small, I18n.t(".notifications.#{notification.type}", user: user.username, spot: spot&.title), class: 'd-inline')
-                    notification_out.concat check_box_tag("mark_as_read_#{notification.id}", false, false, value: '', class: 'mark_as_read d-inline', data: { reflex: 'change->Notification::Reflex::Update#mark_as_seen', notification_id: notification.id})
-                  end
-                end.join
+                if user_notifications.blank?
+                  content_tag(:li, I18n.t('.notifications.empty'),class: 'list-group-item list-group-item-action')
+                else
+                  user_notifications.map do |notification|
+                    user = User.find_by(id: notification.from_user_id)
+                    spot = notification.spot
+                    content_tag(:li, class: 'list-group-item list-group-item-action') do
+                      notification_out = ''
+                      notification_out.concat image_tag(Chillboarders::Util::Navigation::NOTIFICATION_IMAGE[notification.type], class: 'notification_image d-inline')
+                      notification_out.concat content_tag(:small, I18n.t(".notifications.#{notification.type}", user: user.username, spot: spot&.title), class: 'd-inline')
+                      notification_out.concat check_box_tag("mark_as_read_#{notification.id}", false, false, value: '', class: 'mark_as_read d-inline', data: { reflex: 'change->Notification::Reflex::Update#mark_as_seen', notification_id: notification.id})
+                    end
+                  end.join
+                end
               end)
             end)
           out.concat content_tag(:span, user_notifications.count, class: 'badge badge-dark notification-alert')

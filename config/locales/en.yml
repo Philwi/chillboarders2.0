@@ -288,6 +288,7 @@ en:
     profile: Profile
     search: Search
     search_spots: Fill with location
+    settings: Settings
     sign_in: Log In
     sign_out: Log Out
     sign_up: Sign In
@@ -300,6 +301,11 @@ en:
       edit: Edit Board
       index: Skater
       show: Show my Board
+  notifications:
+    user_site_comment: "%{user} has posted on your board!"
+    spot_comment: "%{user} has posted on your spot %{spot}!"
+    attachment_comment: "%{user} has commented an image on your board!"
+    empty: There are no notifications 
   number:
     currency:
       format:

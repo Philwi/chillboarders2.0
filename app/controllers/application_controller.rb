@@ -10,4 +10,11 @@ class ApplicationController < ActionController::Base
     locale = params[:locale] || I18n.default_locale
     I18n.with_locale(locale, &action)
   end
+
+  def check_user
+    if current_user.blank?
+      flash[:error] = I18n.t('.errors.messages.no_permission')
+      redirect_to :root
+    end
+  end
 end

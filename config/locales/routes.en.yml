@@ -7,6 +7,7 @@ en:
     sign_out: sign_out
     edit: edit
     spots: spots
+    settings: 'settings'
     new: create
     index: all
     user_sites: 'board'

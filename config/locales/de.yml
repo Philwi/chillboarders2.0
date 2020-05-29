@@ -290,6 +290,7 @@ de:
     news: Nachrichten
     search: Suche
     search_spots: Gebe einen Ort ein
+    settings: Einstellungen
     sign_in: Einloggen
     sign_out: Ausloggen
     sign_up: Anmelden
@@ -306,6 +307,7 @@ de:
     user_site_comment: "%{user} hat etwas an dein Board gepostet!"
     spot_comment: "%{user} hat auf deinem Spot %{spot} etwas gepostet!"
     attachment_comment: "%{user} hat ein Bild auf deinem Board kommentiert!"
+    empty: Es gibt keine Benachrichtiungen für dich
   number:
     currency:
       format:
