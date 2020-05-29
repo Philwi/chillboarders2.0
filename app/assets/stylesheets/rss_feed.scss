@@ -1,3 +1,5 @@
+@import 'variables';
+
 #rss-feed{
   width: 90vw;
   margin: auto;
@@ -9,4 +11,19 @@
 }
 #rss-feed .card-body{
   height: 25em;
+  img{
+    max-width: 100%;
+  }
+}
+
+#contests-table{
+  margin: 0 5%;
+}
+
+.news_icon{
+  text-align: center;
+  i{
+    font-size: 10em;
+    color: $primary;
+  }
 }

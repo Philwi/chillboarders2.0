@@ -49,6 +49,12 @@ de:
       user: Nutzer
   comment:
     create: Kommentar erstellen
+  contest: 
+    image: Bild     
+    date: Datum      
+    title: Titel     
+    description: Beschreibung
+    location: Ort
   date:
     abbr_day_names:
     - So

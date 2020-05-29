@@ -11,3 +11,4 @@ en:
     new: create
     index: all
     user_sites: 'board'
+    rss_feeds: 'news'

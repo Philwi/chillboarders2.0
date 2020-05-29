@@ -9,3 +9,18 @@
                 = feed.description
               .card-footer
                 = link_to(I18n.t('.feed.to_source'),feed.link, class: 'btn btn-dark', target: :_blank)
+
+.news_icon
+  i.material-icons emoji_events
+#contests-table
+  .table-responsive-sm
+    table.table.table-dark.table-borderless
+      tbody
+        - upcoming_contests.each do |contest|
+          tr
+            td = image_tag(contest.src)
+            td = I18n.l(contest.date)
+            td = link_to(contest.title, contest.link, target: :_blank)
+            td = contest.description
+            td = contest.location
+
