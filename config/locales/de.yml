@@ -272,6 +272,11 @@ de:
         other: 'Konnte %{model} nicht speichern: %{count} Fehler.'
   feed:
     to_source: Zur Originalquelle
+  flash:
+    error:
+      user_messages: Deine Nachrichte konnte nicht verschickt werden!
+    notice:
+      user_messages: Deine Nachricht wurde verschickt!
   hello: Hello world
   helpers:
     select:
@@ -388,6 +393,12 @@ de:
       long: "%A, %d. %B %Y, %H:%M Uhr"
       short: "%d. %B, %H:%M Uhr"
     pm: nachmittags
+  user_messages:
+    placeholder:
+      body: 'Deine Nachricht...'
+    save: Abschicken
   user_site:
     default_headline: Board - Headline
     default_text: Board - Text
+    modal_message:
+      subject: "Deine Nachricht an %{user}"

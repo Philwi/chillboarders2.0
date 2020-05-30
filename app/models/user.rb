@@ -17,5 +17,6 @@ class User < ApplicationRecord
   has_many :spots
   has_many :comments
   has_many :ratings
+  has_many :user_messages
   has_one :user_site
 end

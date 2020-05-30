@@ -1,8 +1,10 @@
+require "cell/partial"
 module UserSite::Cell
   class Show < Trailblazer::Cell
     include ::ActionView::Helpers::UrlHelper
     include ::ActionView::Helpers::AssetTagHelper
     include ::ActionView::Helpers::JavaScriptHelper
+    include ::Devise::Controllers::Helpers
 
     def user_avatar
       avatar_image =
@@ -12,6 +14,10 @@ module UserSite::Cell
           'sign_in_image.jpg'
         end
       image_tag(avatar_image, class: 'myskate-user-image')
+    end
+
+    def users_site
+      current_user == user
     end
 
     def primary_color

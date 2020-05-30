@@ -1,3 +1,12 @@
+#user-site-controll
+  - if users_site
+    = link_to(edit_user_sites_path(slug: user.slug)) do
+      i.material-icons(style="background-color: #{secondary_color}; color: #{tertiary_color}") create
+  - elsif current_user
+    a data-target="#messageModal" data-toggle="modal"
+      i.material-icons(style="background-color: #{secondary_color}; color: #{tertiary_color}") mail
+    = concept(::UserSite::Cell::ModalMessage, user: user, primary_color: primary_color, secondary_color: secondary_color, tertiary_color: tertiary_color)
+
 .my-skate-container
   = user_avatar
   //= content_tag(:div, class: 'my-skate-content', style: "background-color: #{secondary_color}; color: #{primary_color};") do

@@ -270,6 +270,11 @@ en:
       header:
         one: 1 error prohibited this %{model} from being saved
         other: "%{count} errors prohibited this %{model} from being saved"
+  flash:
+    error:
+      user_messages: Your message could not be sent!
+    notice:
+      user_messages: Your message was sent!
   hello: Hello world
   helpers:
     select:
@@ -378,6 +383,12 @@ en:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
+  user_messages:
+    placeholder:
+      body: 'Your message...'
+    save: Send
   user_site:
     default_headline: Board - Headline
     default_text: Board - Text
+    modal_message:
+      subject: "Message to %{user}"

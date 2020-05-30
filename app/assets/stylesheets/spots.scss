@@ -179,7 +179,7 @@ figure{
 .carousel-item{
   .img-fluid{
     height: 100%;
-    width: auto;
+    width: 100vw;
   }
 }
 
@@ -189,4 +189,17 @@ figure{
   border-image-slice: 84;
   border-image-repeat: stretch;
   border-image-outset: 10px;
+}
+
+#user-site-controll{
+  position: relative;
+  i{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    cursor: pointer;
+    padding: 0.2em;
+    font-size: 2em;
+    border-radius: 20%;
+  }
 }
