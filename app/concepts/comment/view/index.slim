@@ -3,7 +3,8 @@ div data-controller="Comment::Reflex::Create" data-reflex-root="#comments-sectio
     = comments_count
 
   = content_tag(:div, class: "collapse collapse-comments", id: "collapseComments#{spot_id}")
-    = new_comment
+    - if current_user
+      = new_comment
     div id="comments-section#{spot_id}"
       - model.each do |comment|
         = cell(::Comment::Cell::Show, comment).()
