@@ -182,3 +182,11 @@ figure{
     width: auto;
   }
 }
+
+.card .row{
+  border-image-width: 0px 0 32px;
+  border-image-source: url("/images/rail.png");
+  border-image-slice: 84;
+  border-image-repeat: stretch;
+  border-image-outset: 10px;
+}

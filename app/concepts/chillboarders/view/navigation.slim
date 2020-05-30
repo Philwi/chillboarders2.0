@@ -1,20 +1,21 @@
-nav.navbar.navbar-expand-xl.navbar-light.bg-light
-  = link_to('Chillboarders', root_path, class: 'navbar-brand')
-  button.navbar-toggler aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarTogglerDemo02" data-toggle="collapse" type="button"
-    span.navbar-toggler-icon
-  #navbarTogglerDemo02.collapse.navbar-collapse
-    ul.navbar-nav.mr-auto.mt-2.mt-lg-0
-      - if signed_in?
-        = my_board_site
-      = common_paths
-      - if signed_in?
-        = signed_in_paths
-        #notification data-controller="Notification::Reflex::Update" data-reflex-root= ".notification-badge, .notification-list, .notification-alert"
-          = notifications
-      - else
-        = signed_out_paths
-      = simple_form_for(:query, url: spots_path, method: :get, html: { class: 'form-horizontal form-inline' }, wrapper: :horizontal_form) do |f|
-        = f.input :search, class: 'form-control', placeholder: I18n.t('.navigation.search_spots'), label: false
-        = f.button :button, class: 'btn btn-outline-success form-control' do
-          i.material-icons search
-    = switch_locale
+#navigation
+  nav.navbar.navbar-expand-xl.navbar-light.bg-light
+    = link_to('Chillboarders', root_path, class: 'navbar-brand')
+    button.navbar-toggler aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarTogglerDemo02" data-toggle="collapse" type="button"
+      span.navbar-toggler-icon
+    #navbarTogglerDemo02.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+        - if signed_in?
+          = my_board_site
+        = common_paths
+        - if signed_in?
+          = signed_in_paths
+          #notification data-controller="Notification::Reflex::Update" data-reflex-root= ".notification-badge, .notification-list, .notification-alert"
+            = notifications
+        - else
+          = signed_out_paths
+        = simple_form_for(:query, url: spots_path, method: :get, html: { class: 'form-horizontal form-inline' }, wrapper: :horizontal_form) do |f|
+          = f.input :search, class: 'form-control', placeholder: I18n.t('.navigation.search_spots'), label: false
+          = f.button :button, class: 'btn btn-success form-control' do
+            i.material-icons search
+      = switch_locale

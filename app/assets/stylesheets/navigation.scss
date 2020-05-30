@@ -11,6 +11,7 @@
   h5{
     text-transform: uppercase;
     font-family: 'Oswald';
+    color: $white;
   }
   li :hover{
     transition: 0.2s;
@@ -20,6 +21,16 @@
 
 .navbar-nav{
   margin-left: auto;
+}
+
+.navbar{
+  border-image-width: 0px 0 32px;
+  border-image-source: url("/images/rail.png");
+  border-image-slice: 84;
+  border-image-repeat: stretch;
+  border-image-outset: 16px;
+  background-image: url("/images/navigation-background.jpg");
+  background-repeat:repeat;
 }
 
 .locale-switcher{
