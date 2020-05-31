@@ -54,3 +54,21 @@
   width: 100%;
   height: 90vh;
 }
+
+@media only screen and (max-width: 600px) {
+
+  #settings-sideboard img{
+    object-fit: cover;
+    rotate: 0deg;
+    border-radius: 30%;
+  }
+
+  #settings-sideboard{
+    position: relative;
+    left: 20%;
+  }
+  #settings-sideboard .settings-nav li{
+    max-width: 10em;
+    margin-left: 1em;
+  }
+}
