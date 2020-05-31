@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def check_user
     if current_user.blank?
-      flash[:error] = I18n.t('.errors.messages.no_permission')
+      flash[:alert] = I18n.t('.errors.messages.no_permission')
       redirect_to :root
     end
   end

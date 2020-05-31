@@ -2,11 +2,11 @@
   .modal-dialog.modal-dialog-centered.modal-lg
     .modal-content style="background-color: #{model[:secondary_color]}; color: #{model[:primary_color]}; text-align: center;"
       .modal-header
-        h5#exampleModalLabel.modal-title = I18n.t('.user_site.modal_message.subject', user: model[:user].username)
+        h5#exampleModalLabel.modal-title = I18n.t('.user_site.modal_message.subject', user: model[:user]&.username)
         button.close aria-label="Close" data-dismiss="modal" type="button"
           span aria-hidden="true"  &times;
       .modal-body
         = simple_form_for(UserMessage.new, url: user_messages_path) do |f|
           = f.input :body, as: :text, label: false, placeholder: I18n.t('.user_messages.placeholder.body'), input_html: { rows: 5 }
-          = f.input :for_user_id, as: :hidden, input_html: { value: model[:user].id }
+          = f.input :for_user_id, as: :hidden, input_html: { value: model[:user]&.id }
           = f.button :submit, I18n.t('.user_messages.save') ,class: "btn", style: "background-color: #{model[:primary_color]}; color: #{model[:secondary_color]};"

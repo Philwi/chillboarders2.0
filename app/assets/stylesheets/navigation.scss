@@ -25,10 +25,10 @@
 
 .navbar{
   border-image-width: 0px 0 32px;
-  border-image-source: url("/images/rail.png");
   border-image-slice: 84;
-  border-image-repeat: stretch;
   border-image-outset: 11px;
+  border-image-repeat: stretch;
+  border-image-source: url("/images/rail.png");
   background-image: url("/images/navigation-background.jpg");
   background-repeat:repeat;
 }

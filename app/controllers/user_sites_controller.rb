@@ -21,7 +21,11 @@ class UserSitesController < ApplicationController
 
   def show
     user_site = UserSite.find_by(slug: params[:id]) || UserSite.find_by(id: params[:id])
-    render cell(UserSite::Cell::Show, user_site)
+    if user_site
+      render cell(UserSite::Cell::Show, user_site)
+    else
+      redirect_to root_path
+    end
   end
 
   def modal_content

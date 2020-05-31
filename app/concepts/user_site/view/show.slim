@@ -1,6 +1,6 @@
 #user-site-controll
   - if users_site
-    = link_to(edit_user_sites_path(slug: user.slug)) do
+    = link_to(edit_user_sites_path(slug: user&.slug)) do
       i.material-icons(style="background-color: #{secondary_color}; color: #{tertiary_color}") create
   - elsif current_user
     a data-target="#messageModal" data-toggle="modal"
@@ -13,13 +13,13 @@
   #my-skate-content style="color: #{primary_color}; background-color: #{secondary_color};"
     .space-for-image
     .user-profile
-      h3 = user.username
-      span.badge.badge-dark = user.experience_level&.titleize || 'Rookie'
+      h3 = user&.username
+      span.badge.badge-dark = user&.experience_level&.titleize || 'Rookie'
       .flex-list
       ul style="color: #{tertiary_color}"
-        li = user.country
-        li = user.city
-      p = "'#{user.description}'"
+        li = user&.country
+        li = user&.city
+      p = "'#{user&.description}'"
     .row
       = images
 
