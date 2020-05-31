@@ -401,6 +401,11 @@ de:
     conversation_with: "Deine Unterhaltung mit %{user}"
     no_user_selected: 'Wähle eine Person zum Schreiben aus...'
     no_messages_sent: Du hast noch keine Nachrichten verschickt oder es wurde noch nicht geantwortet
+    welcome: | 
+      Hey, cool dass du dich auf Chillboarders angemeldet hast. Wenn du irgendwelche Fragen oder Verbesserungsvoschläge hast, dann kannst du mir hier direkt schreiben. :)
+      Du kannst hier neue Spots erstellen, deine eigene Seite gestalten. Bilder und Videos hochladen und dich mit anderen Skater*innen connecten.
+      Viel Spaß 
+
   user_site:
     default_headline: Board - Headline
     default_text: Board - Text

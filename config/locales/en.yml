@@ -391,6 +391,10 @@ en:
     conversation_with: "Your conversation with %{user}"
     no_user_selected: 'Choose someone to write with...'
     no_messages_sent: You haven't sent any messages yet or you didn't received one
+    welcome: | 
+      Hey, awesome that you signed up to chillboarders. If you have any questions or suggestions to make this site better, let me know. :)
+      You can insert new spots on the map. Create your own Site, with your own colors, images and videos. Connect with other skaters around the world.
+      Have fun!
   user_site:
     default_headline: Board - Headline
     default_text: Board - Text
