@@ -399,7 +399,8 @@ de:
       body: 'Deine Nachricht...'
     save: Abschicken
     conversation_with: "Deine Unterhaltung mit %{user}"
-    no_user_selected: 'Wähle jemanden zum Schreiben aus...'
+    no_user_selected: 'Wähle eine Person zum Schreiben aus...'
+    no_messages_sent: Du hast noch keine Nachrichten verschickt oder es wurde noch nicht geantwortet
   user_site:
     default_headline: Board - Headline
     default_text: Board - Text

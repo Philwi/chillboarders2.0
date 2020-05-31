@@ -390,6 +390,7 @@ en:
     save: Send
     conversation_with: "Your conversation with %{user}"
     no_user_selected: 'Choose someone to write with...'
+    no_messages_sent: You haven't sent any messages yet or you didn't received one
   user_site:
     default_headline: Board - Headline
     default_text: Board - Text

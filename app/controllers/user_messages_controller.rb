@@ -8,7 +8,7 @@ class UserMessagesController < ApplicationController
     else
       flash[:alert] = I18n.t('.flash.error.user_messages')
     end
-    redirect_to user_site_path(id: params[:user_message][:for_user_id])
+    redirect_to user_site_path(id: params[:user_message][:for_user_id] || result['model']&.for_user_id)
   end
 
   def index

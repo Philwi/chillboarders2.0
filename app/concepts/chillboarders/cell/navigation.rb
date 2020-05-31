@@ -20,7 +20,6 @@ module Chillboarders
       SIGNED_IN_PATHS = [
         { text: '.navigation.spot.new', path: :new_spot, svg: 'svgs/spots.svg' },
         { text: '.navigation.settings', path: :settings, svg: 'svgs/settings.svg' },
-        { text: '.navigation.messages', path: :user_messages, svg: 'svgs/message.svg' },
       ].freeze
 
       SIGNED_OUT_PATHS = [
@@ -52,6 +51,15 @@ module Chillboarders
       def my_board_site
         path = { text: '.navigation.user_site.show', path: user_site_path(current_user.user_site), svg: 'svgs/myboard.svg' }
         build_navigtion_link(path)
+      end
+
+      def user_messages
+        path = { text: '.navigation.messages', path: :user_messages, svg: 'svgs/message.svg' }
+        user_messages_unread_count = UserMessage.where(for_user_id: current_user.id, read: false).count
+
+        out = ''
+        out.concat build_navigtion_link(path)
+        out.concat content_tag(:span, user_messages_unread_count, class: 'badge badge-dark message-alert')
       end
 
       def notifications

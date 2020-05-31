@@ -1,6 +1,8 @@
 ul
-  - unless messages
-    h3 = I18n.t('.user_messages.no_messages_sent')
+  - if messages.blank?
+    #no-messages-sent
+      i.material-icons announcement
+      p = I18n.t('.user_messages.no_messages_sent')
   - messages.each do |message|
     li data-reflex="click->UserMessage::Reflexes::Index#get_history" data-user-id="#{message.user_id}"
       .user_avatar.d-inline

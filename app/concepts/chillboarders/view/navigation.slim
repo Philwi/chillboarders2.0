@@ -10,6 +10,8 @@
         = common_paths
         - if signed_in?
           = signed_in_paths
+          .user-messages
+            = user_messages
           #notification data-controller="Notification::Reflex::Update" data-reflex-root= ".notification-badge, .notification-list, .notification-alert"
             = notifications
         - else

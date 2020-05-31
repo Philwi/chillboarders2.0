@@ -70,6 +70,16 @@
   left: 2em;
 }
 
+.user-messages{
+  position: relative;
+}
+
+.user-messages .message-alert{
+  position: absolute;
+  top: 1em;
+  left: 2em;
+}
+
 .notification .dropdown-menu{
   background-color: $white;
   width: 32em;
