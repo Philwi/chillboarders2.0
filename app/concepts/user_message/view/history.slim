@@ -1,0 +1,14 @@
+h3 = I18n.t('.user_messages.conversation_with', user: user.username)
+#message-history-content
+  - user_messages.each do |message|
+    - if message.for_user_id == current_user.id
+      .incoming-message
+        h5 = message.user.username
+        p = message.body
+        .date
+          small.d-inline = I18n.l(message.created_at)
+    - else
+      .outgoing-message
+        p = message.body
+        .date
+          small.d-inline = I18n.l(message.created_at)

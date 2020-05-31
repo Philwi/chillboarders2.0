@@ -297,6 +297,7 @@ de:
   navigation:
     home: Home
     profile: Profil
+    messages: Nachrichten
     notifications: Benachrichtigungen
     news: Nachrichten
     search: Suche
@@ -397,6 +398,8 @@ de:
     placeholder:
       body: 'Deine Nachricht...'
     save: Abschicken
+    conversation_with: "Deine Unterhaltung mit %{user}"
+    no_user_selected: 'Wähle jemanden zum Schreiben aus...'
   user_site:
     default_headline: Board - Headline
     default_text: Board - Text

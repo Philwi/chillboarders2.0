@@ -1,0 +1,17 @@
+= javascript
+#user-messages data-controller="::UserMessage::Reflexes::Index"
+  .row
+    .col-md-4
+      #message-navigation
+        = concept(::UserMessage::Cell::MessageNavigation)
+    .col-md-8
+      - if user
+        #message-history
+          #message-index
+            = concept(::UserMessage::Cell::History, user: user)
+        #new-message
+          = concept(::UserMessage::Cell::New, user: user)
+      - else
+        #no-user-selected
+          i.material-icons mail
+          p = I18n.t('.user_messages.no_user_selected')

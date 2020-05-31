@@ -25,7 +25,7 @@ module Comment::Cell
     def javascript
       javascript_tag <<-JAVASCRIPT
         function removeValueFromDescription(){
-          var list = document.getElementsByClassName('comment_description');
+          var list = document.getElementsByClassName('user-message-body');
           var n;
           for (n = 0; n < list.length; ++n) {
               list[n].value='';

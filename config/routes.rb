@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
       resources :settings, only: [:index]
       resources :user_sites, only: [:show]
-      resources :user_messages, only: [:create, :update]
+      resources :user_messages, only: [:create, :update, :index]
     end
   end
 end

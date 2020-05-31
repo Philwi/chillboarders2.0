@@ -12,3 +12,4 @@ en:
     index: all
     user_sites: 'board'
     rss_feeds: 'news'
+    user_messages: 'messages'

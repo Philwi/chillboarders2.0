@@ -1,0 +1,2 @@
+= text_area_tag(:body, '', data: { reflex: "change->UserMessage::Reflexes::Index#create", for_user_id: model[:user]&.id }, class: 'form-control text user-message-body')
+= button_tag(I18n.t('.user_messages.save'), class: 'btn btn-primary', onclick:"removeValueFromBody()")

@@ -1,0 +1,109 @@
+@import 'variables';
+
+#user-messages{
+  .col-md-8, .col-md-4{
+    padding: 0;
+  }
+
+  .row{
+    margin: 0;
+  }
+  background-color: $white;
+  color: $dark;
+}
+
+#user-messages #message-navigation{
+  height: 90vh;
+  overflow: auto;
+  img{
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  ul{
+    list-style: none;
+    background-color: $white;
+    color: $dark;
+    padding: 0px;
+  }
+  li{
+    padding: 1em 0.5em;
+    cursor: pointer;
+    p, strong{
+      margin-left: 60px;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 80%;
+      font-size: 0.7em;
+      color: #666;
+    }
+  }
+  li:hover{
+    background-color: $primary;
+    transition: 0.3s;
+  }
+}
+
+#message-history{
+  height: 60vh;
+  overflow: auto;
+}
+#user-messages #message-index{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  height: 60vh;
+  width: 100%;
+
+  #message-history-content{
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .incoming-message, .outgoing-message{
+    position: relative;
+    padding: 1em;
+    margin-top: 1em;
+    border-radius: 20px;
+  .date{
+    position: absolute;
+      bottom: 0;
+      right: 5%;
+      color: $white;
+    }
+  }
+  .incoming-message{
+    background-color: #c5c8c7;
+    margin-left: 1%;
+    margin-right: 20%;
+  }
+  .outgoing-message{
+    background-color: $primary;
+    margin-right: 1%;
+    margin-left: 20%;
+  }
+}
+
+#new-message{
+  margin: 1em;
+  text-align: center;
+
+  .btn{
+    margin-top: 1em;
+  }
+}
+
+#user-messages{
+  #no-user-selected{
+    text-align: center;
+    color: #4444;
+    margin-top: 20%;
+    i{
+      font-size: 4em;
+    }
+  }
+}

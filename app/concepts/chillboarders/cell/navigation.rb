@@ -20,9 +20,7 @@ module Chillboarders
       SIGNED_IN_PATHS = [
         { text: '.navigation.spot.new', path: :new_spot, svg: 'svgs/spots.svg' },
         { text: '.navigation.settings', path: :settings, svg: 'svgs/settings.svg' },
-        #{ text: '.navigation.user_site.edit', path: :edit_user_sites, svg: 'svgs/skater.svg' },
-        #{ text: '.navigation.user.edit', path: :edit_user_registration, svg: 'svgs/edit.svg' },
-        #{ text: '.navigation.sign_out', path: :destroy_user_session, svg: 'svgs/logout.svg' },
+        { text: '.navigation.messages', path: :user_messages, svg: 'svgs/message.svg' },
       ].freeze
 
       SIGNED_OUT_PATHS = [

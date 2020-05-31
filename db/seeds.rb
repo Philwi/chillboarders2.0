@@ -48,6 +48,12 @@ module SeedHelper
       result = UserSite::Operation::Update.call(params: params, user: user)
     end
 
+    def create_user_messages
+      for_user, from_user = User.all.sample(2)
+      message = Faker::Hipster.sentences.join
+      UserMessage.create(user: from_user, for_user_id: for_user.id, body: message)
+    end
+
     def image_fetcher
       open("https://robohash.org/sitsequiquia.png?size=300x300&set=set1")
     end
@@ -58,4 +64,5 @@ end
   user = SeedHelper.create_user
   spot = SeedHelper.create_spot(user)
   SeedHelper.edit_user_site(user.user_site, user)
+  SeedHelper.create_user_messages
 end
