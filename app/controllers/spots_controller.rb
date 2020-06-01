@@ -1,5 +1,5 @@
 class SpotsController < ApplicationController
-  before_action :check_user, only: [:create, :update]
+  before_action :check_user, only: [:create, :update, :new]
 
   def index
     # @bounds
@@ -40,12 +40,4 @@ class SpotsController < ApplicationController
       render cell(Spot::Cell::Edit, result['contract.default'])
     end
   end
-
-  def check_user
-    if current_user.blank?
-      flash[:error] = I18n.t('.errors.messages.no_permission')
-      redirect_to :root
-    end
-  end
-
 end

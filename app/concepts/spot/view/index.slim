@@ -1,5 +1,9 @@
 div data-reflex-permanent=''
-  = leaflet_map
+  #skatemap
+    #addspot
+      = link_to(new_spot_path, title: I18n.t('.navigation.spot.new'), data: { toggle: 'tooltip', trigger: 'hover' }) do
+        i.material-icons add_location
+    = leaflet_map
   #mapid
 = text_field_tag(:bounds, 0, class: 'd-none', data: { reflex: "change->Spot::Reflexes::Index#spots" })
 = spots

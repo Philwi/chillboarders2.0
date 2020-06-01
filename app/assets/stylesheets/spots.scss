@@ -203,3 +203,26 @@ figure{
     border-radius: 20%;
   }
 }
+
+#skatemap{
+  position: relative;
+}
+
+#skatemap #addspot{
+  position: absolute;
+  top: 3em;
+  right: 5%;
+  z-index: 999;
+  i{
+    cursor: pointer;
+    color: $dark;
+    background-color: transparent;
+    border-radius: 50px;
+    font-size: 3em;
+  }
+  i:hover{
+    color: $primary;
+    background-color: $dark;
+    transition: 0.3s;
+  }
+}
