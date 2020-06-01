@@ -1,0 +1,26 @@
+@import 'variables';
+
+#footer{
+  height: 100px;
+  ul{
+    display: inline-flex;
+    list-style: none;
+    text-align: center;
+    width: 100vw;
+    height: 100%;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  li{
+    margin: auto auto 0 auto;
+  }
+  #copyright{
+    text-align: center;
+    p{
+      font-size: 14px;
+    }
+    i{
+      font-size: 14px;
+    }
+  }
+}

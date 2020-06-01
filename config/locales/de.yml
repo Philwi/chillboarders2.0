@@ -8,6 +8,11 @@ de:
     attributes:
       comment:
         description: Kommentar
+      contact:
+        name: Name
+        email: E-Mail
+        body: Text
+        save: Deine Nachricht wurde erfolgreich übermittelt!
       spot:
         description: Spotbeschreibung
         images: Spotbilder
@@ -49,6 +54,10 @@ de:
       user: Nutzer
   comment:
     create: Kommentar erstellen
+  contact:
+    name: Dein Name
+    email: Deine E-Mail
+    body: Dein Text
   contest: 
     image: Bild     
     date: Datum      
@@ -277,6 +286,10 @@ de:
       user_messages: Deine Nachrichte konnte nicht verschickt werden!
     notice:
       user_messages: Deine Nachricht wurde verschickt!
+  footer: 
+    contact: Kontakt
+    data_protection: Datenschutzerklärung
+    impressum: Impressum
   hello: Hello world
   helpers:
     select:
@@ -294,6 +307,7 @@ de:
     rating: Rating
     save: Speichern
     search: Suchen
+    send: Abschicken
   navigation:
     home: Home
     profile: Profil

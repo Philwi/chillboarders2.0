@@ -8,6 +8,11 @@ en:
     attributes:
       comment:
         description: Comment
+      contact:
+        name: Name
+        email: E-Mail
+        body: Text
+        save: Your message was sent successfully
       spot:
         description: Spot description
         images: Spot Images
@@ -47,6 +52,10 @@ en:
               not_the_same_passwords: Passwords are not the same
     models:
       user: User
+  contact:
+    name: Your name
+    email: Your email 
+    body: Your text 
   comment:
     create: Create Comment
   contest: 
@@ -275,6 +284,10 @@ en:
       user_messages: Your message could not be sent!
     notice:
       user_messages: Your message was sent!
+  footer: 
+    contact: Kontakt
+    data_protection: Datenschutzerklärung
+    impressum: Impressum
   hello: Hello world
   helpers:
     select:
@@ -290,6 +303,7 @@ en:
     comments: "%{amount} Comments"
     images_upload: Upload Images
     rating: Rating
+    send: Send
     save: Save
     search: Search
   navigation:

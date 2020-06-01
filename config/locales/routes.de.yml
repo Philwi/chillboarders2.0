@@ -1,15 +1,19 @@
 ---
 de:
   routes:
-    users: 'nutzer'
-    sign_up: 'anmelden'
+    commons: allgemein
+    contact: kontakt
+    edit: 'bearbeiten'
+    impressum: 'impressum'
+    index: 'alle'
+    new: 'erstellen'
+    privacy: datenschutzerklaerung
+    rss_feeds: 'neuigkeiten'
+    settings: 'einstellungen'
     sign_in: 'einloggen'
     sign_out: ausloggen
-    edit: 'bearbeiten'
+    sign_up: 'anmelden'
     spots: 'spot'
-    new: 'erstellen'
-    index: 'alle'
-    user_sites: 'board'
-    settings: 'einstellungen'
-    rss_feeds: 'neuigkeiten'
     user_messages: 'nachrichten'
+    user_sites: 'board'
+    users: 'nutzer'

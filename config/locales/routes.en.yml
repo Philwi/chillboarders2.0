@@ -1,15 +1,19 @@
 ---
 en:
   routes:
-    users: 'user'
-    sign_up: 'sign_up'
+    commons: common
+    contact: contact
+    edit: edit
+    impressum: 'impressum'
+    index: all
+    new: create
+    privacy: privacy
+    rss_feeds: 'news'
+    settings: 'settings'
     sign_in: 'sign_in'
     sign_out: sign_out
-    edit: edit
+    sign_up: 'sign_up'
     spots: spots
-    settings: 'settings'
-    new: create
-    index: all
-    user_sites: 'board'
-    rss_feeds: 'news'
     user_messages: 'messages'
+    user_sites: 'board'
+    users: 'user'

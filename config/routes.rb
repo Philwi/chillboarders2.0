@@ -9,6 +9,13 @@ Rails.application.routes.draw do
       resources :spots, only: [:index, :new, :create, :edit, :update]
       resources :comments, only: [:create]
 
+      resource :commons do
+        get :privacy
+        get :impressum
+        get :contact
+        post :create_contact_message
+      end
+
       resources :rss_feeds, only: [:index]
 
       # without params[:id]

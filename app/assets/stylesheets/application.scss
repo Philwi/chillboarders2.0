@@ -23,6 +23,7 @@
 @import 'material-icons/css/material-icons.scss';
 @import 'rss_feed';
 @import 'settings';
+@import 'footer';
 
 body{
   background-color: $dark;
@@ -48,4 +49,8 @@ body{
 // spinner cursor
 .wait{
   cursor: wait !important;
+}
+
+#common{
+  margin: 5%;
 }
