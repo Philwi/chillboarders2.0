@@ -10,5 +10,5 @@ html
   body
     = cell(Chillboarders::Cell::Navigation, nil, current_user: options[:current_user])
     = flash_messages
-    #layout_body_wrapper
+    #layout_body_wrapper data-controller="application"
       = model
