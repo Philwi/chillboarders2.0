@@ -1,27 +1,28 @@
-= cell(::UserSite::Cell::Search).()
-#user-site-cards data-controller="user-site" data-action="scroll@window->user-site#scroll"
-  = content_tag(:input, '', class: 'd-none', data: {target: 'user-site.params'}, value: params)
-  .row
-    - model.each do |user_site|
-      .col-sm-4
-        .card style=("color: #{user_site.primary_color}; background-color: #{user_site.secondary_color};")
-          = image(user_site)
-          .card-body
-            span.badge style=("color: #{user_site.secondary_color}; background-color: #{user_site.tertiary_color};") = user_site.user.experience_level&.titleize || 'Rookie'
-            h5.card-title = user_site.user.username
-            p.card-text = user_site.user.description
-            = link_to(I18n.t('.misc.board_site'), user_site_path(user_site), class: 'btn', style: "color: #{user_site.secondary_color}; background-color: #{user_site.tertiary_color};")
-          .card-footer-user-site style=("color: #{user_site.secondary_color}; background-color: #{user_site.tertiary_color};")
-            .one-third
-              i.material-icons menu_book
-              .stat-value = user_site.user.favourite_trick || 'Ollie'
-            .one-third
-              i.material-icons place
-              .stat-value = user_site.user.city || 'Somewhere'
-            .one-third.no-border
-              i.material-icons flag
-              .stat-value = user_site.user.spots.count
+#user-site-index
+  = cell(::UserSite::Cell::Search).()
+  #user-site-cards data-controller="user-site" data-action="scroll@window->user-site#scroll"
+    = content_tag(:input, '', class: 'd-none', data: {target: 'user-site.params'}, value: params)
+    .row
+      - model.each do |user_site|
+        .col-sm-4
+          .card style=("color: #{user_site.primary_color}; background-color: #{user_site.secondary_color};")
+            = image(user_site)
+            .card-body
+              span.badge style=("color: #{user_site.secondary_color}; background-color: #{user_site.tertiary_color};") = user_site.user.experience_level&.titleize || 'Rookie'
+              h5.card-title = user_site.user.username
+              p.card-text = user_site.user.description
+              = link_to(I18n.t('.misc.board_site'), user_site_path(user_site), class: 'btn', style: "color: #{user_site.secondary_color}; background-color: #{user_site.tertiary_color};")
+            .card-footer-user-site style=("color: #{user_site.secondary_color}; background-color: #{user_site.tertiary_color};")
+              .one-third
+                i.material-icons menu_book
+                .stat-value = user_site.user.favourite_trick || 'Ollie'
+              .one-third
+                i.material-icons place
+                .stat-value = user_site.user.city || 'Somewhere'
+              .no-border-third
+                i.material-icons flag
+                .stat-value = user_site.user.spots.count
 
-- if user_sites_left
-  #user-sites-left
-    i.material-icons double_arrow
+  - if user_sites_left
+    #user-sites-left
+      i.material-icons double_arrow
