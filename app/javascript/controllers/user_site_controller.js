@@ -7,7 +7,7 @@ export default class extends ApplicationController {
   static targets = ['params']
   connect () {
     StimulusReflex.register(this)
-    this.scroll = debounce(this.scroll, 1000)
+    this.scroll = debounce(this.scroll, 100)
   }
 
   scroll () {

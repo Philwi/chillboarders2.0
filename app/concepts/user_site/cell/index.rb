@@ -16,5 +16,13 @@ module UserSite::Cell
     def params
       options.dig(:params).to_json
     end
+
+    def user_sites_left
+      if params
+        UserSite.search_skater(JSON.parse params).count > model.count
+      else
+        UserSite.count > model.count
+      end
+    end
   end
 end
