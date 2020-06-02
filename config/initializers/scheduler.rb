@@ -11,3 +11,7 @@ return if defined?(Rails::Console) || Rails.env.test? || File.split($0).last == 
 s.every '6h' do
   RssFeedJob.perform_later
 end
+
+s.every '24h' do
+  rake "-s sitemap:refresh"
+end

@@ -1,18 +1,20 @@
 @import 'variables';
 
 #footer{
-  height: 100px;
+  height: 150px;
+  padding-top: 1em;
   ul{
     display: inline-flex;
     list-style: none;
     text-align: center;
     width: 100vw;
-    height: 100%;
+    height: 75%;
     padding: 0;
     margin-bottom: 0;
   }
   li{
     margin: auto auto 0 auto;
+    text-shadow: 0px 0px 12px black;
   }
   #copyright{
     text-align: center;
@@ -23,4 +25,14 @@
       font-size: 14px;
     }
   }
+}
+
+#footer{
+  border-image-width: 32px 0 0px;
+  border-image-slice: 84;
+  border-image-outset: 17px;
+  border-style: solid;
+  border-image-source: url("/images/rail.png");
+  background-image: url("/images/navigation-background.jpg");
+  background-size: cover;
 }

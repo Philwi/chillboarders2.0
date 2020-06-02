@@ -28,13 +28,16 @@
 body{
   background-color: $dark;
   color: $white;
+  overflow-x: hidden;
 }
 
 #layout_body_wrapper{
+  max-width: 100vw;
 }
 
 #mapid{
   width: 100%;
+  max-width: 100vw;
   height: 80vh;
 }
 .card-img-top{

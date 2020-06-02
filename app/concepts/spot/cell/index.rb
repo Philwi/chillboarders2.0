@@ -18,7 +18,12 @@ module Spot::Cell
           spot_card(spot)
         end.join
       else
-        content_tag(:h3, I18n.t('.spots.empty'))
+        content_tag(:div, class: 'no_spots_here') do
+          out = ''
+          out.concat content_tag(:i, 'sentiment_dissatisfied', class: 'material-icons')
+          out.concat content_tag(:h5, I18n.t('.spots.empty'))
+          out.concat link_to(I18n.t('.navigation.spot.new'), :new_spot)
+        end
       end
     end
 

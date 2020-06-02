@@ -226,3 +226,15 @@ figure{
     transition: 0.3s;
   }
 }
+
+.no_spots_here{
+  text-align: center;
+  color: gray;
+  i{
+    font-size: 5em;
+  }
+  a{
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

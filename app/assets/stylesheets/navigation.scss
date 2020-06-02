@@ -28,10 +28,25 @@
   border-image-slice: 84;
   border-image-outset: 11px;
   border-style: solid;
-  border-image-repeat: stretch;
   border-image-source: url("/images/rail.png");
   background-image: url("/images/navigation-background.jpg");
-  background-repeat:repeat;
+  min-height: 6em;
+}
+
+.navbar-light .navbar-brand{
+  color: $primary;
+  font-family: "Helvetica Neue";
+  text-transform: uppercase;
+  font-weight: 500;
+  text-shadow: 3px 3px 3px black;
+}
+.navbar-light .navbar-brand:hover{
+    color: $primary;
+    transition: 0.3s;
+  }
+
+.navbar-toggler{
+  background-color: $primary;
 }
 
 .locale-switcher{
