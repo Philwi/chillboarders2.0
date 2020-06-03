@@ -1,1 +1,5 @@
+<title> <%= @meta_title || 'Chillboarders' %> </title>
+<meta name="description" content="<%= @meta_description || 'A map for skatespots around the world'%>">
+<meta name="keywords" content="<%= @meta_keywords || 'Skateboard, Skatemap, Skater, Spot, Skatespots' %>">
+
 <%= concept(Chillboarders::Cell::Layout, yield, current_user: current_user) %>

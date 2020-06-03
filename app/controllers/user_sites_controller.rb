@@ -1,11 +1,13 @@
 class UserSitesController < ApplicationController
 
   def index
+    meta_tags(title: 'Chillboarders - Skaters', description: 'List of all skaters at chillboarders', keywords: 'Skateboard, Skater, Users')
     @model ||= UserSite.search_skater(params).limit(6).order(:username)
     render html: cell(UserSite::Cell::Index, @model, params: params), layout: 'application'
   end
 
   def edit
+    meta_tags(title: 'Chillboarders - Edit Skaters', description: 'Edit page for personal page of user', keywords: 'Skateboard, Skater, Users, Board')
     @model = UserSite::Operation::Update::Present.(params: nil, user: current_user)['model']
     render html: cell(UserSite::Cell::Edit, @model), layout: 'application'
   end
@@ -21,6 +23,7 @@ class UserSitesController < ApplicationController
 
   def show
     user_site = UserSite.find_by(slug: params[:id]) || UserSite.find_by(id: params[:id])
+    meta_tags(title: "Chillboarders - #{user_site.user.username} Board", description: 'Personal page of user', keywords: 'Skateboard, Skater, Users, Board, Usersite')
     if user_site
       render cell(UserSite::Cell::Show, user_site)
     else

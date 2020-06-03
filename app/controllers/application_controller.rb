@@ -17,4 +17,10 @@ class ApplicationController < ActionController::Base
       redirect_to :new_user_session
     end
   end
+
+  def meta_tags(title:, description:, keywords: nil)
+    @meta_title = title
+    @meta_description = description
+    @meta_keywords = keywords
+  end
 end
