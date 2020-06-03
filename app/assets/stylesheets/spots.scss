@@ -230,6 +230,7 @@ figure{
 .no_spots_here{
   text-align: center;
   color: gray;
+  padding: 1em;
   i{
     font-size: 5em;
   }
@@ -237,4 +238,9 @@ figure{
     font-weight: bold;
     text-transform: uppercase;
   }
+}
+
+#spot_map  {
+  height: 10px !important;
+  margin-top: 1em;
 }

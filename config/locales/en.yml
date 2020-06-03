@@ -256,7 +256,7 @@ en:
       less_than: must be less than %{count}
       less_than_or_equal_to: must be less than or equal to %{count}
       model_invalid: 'Validation failed: %{errors}'
-      no_permission: Für diese Aktion hast du leider keine Berechtigung. Melde dich doch einfach an :)
+      no_permission: You got not the permission for this action. You could sign in :)
       not_a_number: is not a number
       not_an_integer: must be an integer
       not_saved: Not saved
@@ -285,8 +285,8 @@ en:
     notice:
       user_messages: Your message was sent!
   footer: 
-    contact: Kontakt
-    data_protection: Datenschutzerklärung
+    contact: Contact
+    data_protection: Data Privacy
     impressum: Impressum
   hello: Hello world
   helpers:
@@ -308,9 +308,9 @@ en:
     search: Search
   navigation:
     home: Home
-    messages: Nachrichten
+    messages: Messages
     notifications: Notifications
-    news: Nachrichten
+    news: News
     profile: Profile
     search: Search
     search_spots: Fill with location

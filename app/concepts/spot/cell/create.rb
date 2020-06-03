@@ -15,6 +15,7 @@ module Spot::Cell
 
     def form
       attributes = [
+        { attribute: :map, icon: 'add_location', options: { required: true, label: false, input_html: { value: false, type: :checkbox, checked: false }, disabled: true }},
         { attribute: :title, icon: 'subject', options: { required: true, autofocus: true, label: false, placeholder: I18n.t('.activerecord.attributes.spot.title')} },
         { attribute: :description, icon: 'view_headline', options: { as: :text, required: true, label: false, placeholder: I18n.t('.activerecord.attributes.spot.description') } },
         { attribute: :type, icon: 'fitness_center', type: :select, options: { collection: ::Spot::Util::Helper::SPOT_TYPES, include_blank: false, include_hidden: false, label_method: :titleize, label: false}},
@@ -62,6 +63,7 @@ module Spot::Cell
             lng = e.latlng.lng;
             document.getElementById('spot_lat').value = e.latlng.lat;
             document.getElementById('spot_lng').value = e.latlng.lng;
+            document.getElementById('spot_map').checked = true;
 
             marker.on('drag', onDrag);
           };
