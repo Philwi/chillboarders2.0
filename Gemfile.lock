@@ -405,6 +405,8 @@ GEM
     simple_form (5.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
+    sitemap_generator (6.1.2)
+      builder (~> 3.0)
     sixarm_ruby_unaccent (1.2.0)
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
@@ -557,6 +559,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   simple_form
+  sitemap_generator
   slim-rails
   spring
   spring-watcher-listen (~> 2.0.0)
