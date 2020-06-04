@@ -31,6 +31,10 @@
   border-image-source: url("/images/rail.png");
   background-image: url("/images/navigation-background.jpg");
   min-height: 6em;
+  .navbar-image{
+    height: 100px;
+    padding: 2px;
+  }
 }
 
 .navbar-light .navbar-brand{
