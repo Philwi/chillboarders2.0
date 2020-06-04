@@ -5,6 +5,7 @@
 
 require("../../assets/stylesheets/application.scss")
 import 'leaflet/dist/leaflet.css';
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
 
 require("@rails/ujs").start()
 require("turbolinks").start()
@@ -12,6 +13,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("bootstrap")
 require("leaflet")
+require("leaflet.markercluster")
 require("material-icons")
 
 import L from 'leaflet';

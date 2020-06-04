@@ -102,7 +102,7 @@ module Spot::Cell
     def create_markers
       model.map.with_index do |spot, index|
         icon = MARKER_IMAGES.find { |image| image[:type] == spot.type }&.dig(:icon) || 'parkIcon'
-        "var marker#{index} = L.marker([#{spot.lat}, #{spot.lng}], {id: 'spot-#{spot.id}', icon: #{icon}}).on('click', scrollToId).addTo(map);"
+        "var marker#{index} = markers.addLayer(L.marker([#{spot.lat}, #{spot.lng}], {id: 'spot-#{spot.id}', icon: #{icon}}).on('click', scrollToId));"
       end.join
     end
 
@@ -114,6 +114,9 @@ module Spot::Cell
       var lat = 0
       var markerChangeTimer;                //timer identifier
       var doneChangeInterval = 5000;  //time in ms (5 seconds)
+      var markers = L.markerClusterGroup({
+        removeOutsideVisibleBounds: true,
+      });
 
       var skateIcon = L.Icon.extend({
         options: {
@@ -149,7 +152,7 @@ module Spot::Cell
                 attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
 
-        eval("#{create_markers}")
+        eval("#{create_markers}");
 
         function setBoundsAndTriggerReflexAction(){
           const bounds = map.getBounds();
@@ -167,6 +170,7 @@ module Spot::Cell
           clearTimeout(markerChangeTimer);
           markerChangeTimer = setTimeout(setBoundsAndTriggerReflexAction, 150);
         });
+        map.addLayer(markers);
       }
       JAVASCRIPT
     end
