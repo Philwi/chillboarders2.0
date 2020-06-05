@@ -7,6 +7,7 @@ module Spot::Cell
 
     def spots
       if model.present?
+        # TODO: wenn params angegeben sind, dann gebe die Spots auch von dort aus und nicht die von der Userlocation...
         # get users location and just the near spots for performance reasons
         less_spots =
           if model.count > 15 && (user_ip = request.remote_ip) && user_ip != '127.0.0.1'
@@ -148,8 +149,8 @@ module Spot::Cell
 
       function setMap(){
         var map = L.map('mapid').setView([lat, lng], 13);
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
 
         eval("#{create_markers}");

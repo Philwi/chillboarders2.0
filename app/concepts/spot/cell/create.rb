@@ -44,8 +44,8 @@ module Spot::Cell
 
         function setMap(){
           var map = L.map('mapid').setView([lat, lng], 13);
-          L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                  attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
               }).addTo(map);
 
           var onDrag = function(e) {
