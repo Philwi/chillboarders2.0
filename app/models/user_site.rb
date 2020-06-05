@@ -17,8 +17,7 @@ class UserSite < ApplicationRecord
     def search_skater(params)
       username = params.dig('search', 'username')
       city = params.dig('search', 'city')
-
-      self.joins(:user).where('username ILIKE ? AND city ILIKE ?', "%#{username}%", "%#{city}%")
+      self.left_joins(user: :spots).where('username ILIKE ? AND city ILIKE ?', "%#{username}%", "%#{city}%").group("user_sites.id ,spots.id").order('COUNT(spots.id) desc').uniq
     end
   end
 end

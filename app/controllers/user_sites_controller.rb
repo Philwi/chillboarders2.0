@@ -2,7 +2,7 @@ class UserSitesController < ApplicationController
 
   def index
     meta_tags(title: 'Chillboarders - Skaters', description: 'List of all skaters at chillboarders', keywords: 'Skateboard, Skater, Users')
-    @model ||= UserSite.search_skater(params).limit(6).order(:username)
+    @model ||= UserSite.search_skater(params).first(6)
     render html: cell(UserSite::Cell::Index, @model, params: params), layout: 'application'
   end
 
