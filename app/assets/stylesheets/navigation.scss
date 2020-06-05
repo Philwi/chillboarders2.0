@@ -21,6 +21,18 @@
 
 .navbar-nav{
   margin-left: auto;
+  .simple_form{
+    margin-top: auto;
+  }
+  #query_search, #query_search::placeholder{
+    background: transparent;
+    color: $white;
+  }
+  #query_search:focus, #query_search::placeholder:focus{
+    background: $white;
+    transition: 0.2s;
+    color: rgb(65, 65, 65);
+  }
 }
 
 .navbar{

@@ -10,7 +10,7 @@ module Spot::Cell
         # TODO: wenn params angegeben sind, dann gebe die Spots auch von dort aus und nicht die von der Userlocation...
         # get users location and just the near spots for performance reasons
         less_spots =
-          if model.count > 15 && (user_ip = request.remote_ip) && user_ip != '127.0.0.1'
+          if model.count > 15 && (user_ip = request.remote_ip) && user_ip != '127.0.0.1' && params['query'].blank?
             results = Geocoder.search(user_ip)
             model.where('lat BETWEEN ? AND ? AND lng BETWEEN ? AND ?', results.first.coordinates.first - (0.009 * 10), results.first.coordinates.first + (0.009 * 10), results.first.coordinates.second - (0.009 * 10), results.first.coordinates.second + (0.009 * 10))
           end
@@ -140,7 +140,7 @@ module Spot::Cell
           lng = position.coords.longitude
         };
 
-        setMap();
+        setMap()
       }
 
       function scrollToId(e){
@@ -167,11 +167,13 @@ module Spot::Cell
           el.dispatchEvent(event);
         }
 
+
         map.on('move', function() {
           clearTimeout(markerChangeTimer);
           markerChangeTimer = setTimeout(setBoundsAndTriggerReflexAction, 150);
         });
         map.addLayer(markers);
+        map.fire('move');
       }
       JAVASCRIPT
     end
