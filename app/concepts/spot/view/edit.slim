@@ -18,6 +18,7 @@ figure.spot-description-content
     i.material-icons place
   h3 = I18n.t('.misc.address')
   p = address
+  = link_to(I18n.t('spots.to_wego_here'), spot_wego_here, target: :_blank, class: 'btn btn-dark')
 
 div data-reflex-permanent=''
   #mapid

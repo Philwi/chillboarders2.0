@@ -386,6 +386,7 @@ en:
     empty: There are no spots in the near...
     set_marker: Set the marker where your spot is located
     to_spot: Show Spot
+    to_wego_here: 'Lead me to the spot'
   support:
     array:
       last_word_connector: ", and "

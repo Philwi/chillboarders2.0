@@ -396,6 +396,7 @@ de:
     empty: Hier gibt es leider keine Skatespots...
     set_marker: Setze den Marker für die Ortsangabe
     to_spot: Zum Spot
+    to_wego_here: 'Führe mich hin'
   support:
     array:
       last_word_connector: " und "
