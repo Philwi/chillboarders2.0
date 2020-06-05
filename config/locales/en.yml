@@ -284,6 +284,8 @@ en:
       user_messages: Your message could not be sent!
     notice:
       user_messages: Your message was sent!
+      user:
+        after_sign_up: 'Cool that you signed up. If you want you can complete your profile'
   footer: 
     contact: Contact
     data_protection: Data Privacy
@@ -300,6 +302,7 @@ en:
     address: Address
     board_site: My Board
     close: Close
+    here: here
     comments: "%{amount} Comments"
     images_upload: Upload Images
     rating: Rating
@@ -331,6 +334,8 @@ en:
     user_site_comment: "%{user} has posted on your board!"
     spot_comment: "%{user} has posted on your spot %{spot}!"
     attachment_comment: "%{user} has commented an image on your board!"
+    incomplete_user_site: "Your Board isn't complete yet. You can %{link} update it."
+    incomplete_profile: "Your Profile isn't complete yet. You can %{link} update it." 
     empty: There are no notifications 
   number:
     currency:

@@ -13,7 +13,8 @@
     font-family: 'Oswald';
     color: $white;
   }
-  li :hover{
+  .nav-link:hover{
+    cursor: pointer;
     transition: 0.2s;
     background-color: $primary;
   }

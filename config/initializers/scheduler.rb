@@ -15,3 +15,7 @@ end
 s.every '24h' do
   rake "-s sitemap:refresh"
 end
+
+s.every '24h' do
+  UserNotificationsJob.perform_later
+end

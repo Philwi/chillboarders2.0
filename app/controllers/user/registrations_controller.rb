@@ -15,7 +15,8 @@ class User::RegistrationsController < Devise::RegistrationsController
     result = User::Operation::Create.call(params: params.permit!)
     if result.success?
       sign_up(resource_name, result['model'])
-      return redirect_to root_path
+      flash[:notice] = I18n.t('.flash.notice.user.after_sign_up')
+      return redirect_to edit_user_registration_path(slug: result['model'].slug)
     else
       render cell(User::Cell::Create, result['contract.default'])
     end

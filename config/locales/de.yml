@@ -286,6 +286,8 @@ de:
       user_messages: Deine Nachrichte konnte nicht verschickt werden!
     notice:
       user_messages: Deine Nachricht wurde verschickt!
+      user:
+        after_sign_up: 'Cool das du dich angemeldet hast. Wenn du möchtest, kannst du gerne dein Profil noch befüllen!'
   footer: 
     contact: Kontakt
     data_protection: Datenschutzerklärung
@@ -303,6 +305,7 @@ de:
     board_site: Zum Board
     close: Schließen
     comments: "%{amount} Kommentare"
+    here: hier
     images_upload: Bilder hochladen
     rating: Rating
     save: Speichern
@@ -333,6 +336,8 @@ de:
     user_site_comment: "%{user} hat etwas an dein Board gepostet!"
     spot_comment: "%{user} hat auf deinem Spot %{spot} etwas gepostet!"
     attachment_comment: "%{user} hat ein Bild auf deinem Board kommentiert!"
+    incomplete_user_site: "Dein Board ist noch nicht vollständig. Du kannst es %{link} ergänzen."
+    incomplete_profile: "Dein Profil ist noch nicht vollständig. Du kannst es %{link} ergänzen."
     empty: Es gibt keine Benachrichtiungen für dich
   number:
     currency:
