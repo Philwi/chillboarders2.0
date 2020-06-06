@@ -1,0 +1,57 @@
+en:
+  seo:
+    controller:
+      common:
+        privacy:
+          title: Chillboarders - Privacy Policy
+          description: Privacy Police of chillboarders
+          keywords: 'Privacy, Police'
+        impressum:
+          title: Chillboarders - Impressum
+          description: Impressum of chillboarders
+          keywords: 'Impressum, chillboarders'
+        contact:
+          title: Chillboarders - Contact
+          description: Contact chillboarders owner
+          keywords: 'Contact'
+      rss_feed:
+        index: 
+          title: Chillboarders - News from the skateboarding world
+          description: News from the skateboarding world and contests termination around the globe
+          keywords: 'skateboarding, News'
+      setting:
+        index: 
+          title: Chillboarders - Usersettings
+          description: Summary of your settings
+          keywords: ''
+      spot:
+        index: 
+          title: Chillboarders - Find your next skatespot!
+          description: Find your favourite skate spots, comment existing ones and create new ones. Skatemap with many spots.
+          keywords: 'favourite, skate, spots, Skatemap'
+        new: 
+          title: Chillboarders - Create the next spot!
+          description: Create the new favourite skatespot for you and other skaters on our skatemap
+          keywords: 'Create, skatespot, skaters, skatemap'
+        edit: 
+          title: "Chillboarders - Skatespot: %{title}"
+          description: "%{description}. Skatespot"
+          keywords: 'Skatespot'
+      user_message:
+        index:
+          title: Chillboarders - Messages
+          description: Chat for users from chillboarders
+          keywords: 'Chat, chillboarders'
+      user_site:
+        index:
+          title: Chillboarders - List of all registered skaters
+          description: Searchable list of all registered skaters with custom boards and displayed text.
+          keywords: 'skaters, chillboarders, boards, registered'
+        edit:
+          title: Chillboarders - Edit your own board
+          description: Edit page for personal board of a skater
+          keywords: 'board, skater' 
+        show:
+          title: "Chillboarders - %{username} Board"
+          description: "Personal board of %{username}"
+          keywords: 'Personal, board'

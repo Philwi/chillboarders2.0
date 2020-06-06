@@ -2,7 +2,7 @@ class SpotsController < ApplicationController
   before_action :check_user, only: [:create, :update, :new]
 
   def index
-    meta_tags(title: 'Chillboarders - Find your next skatespot!', description: 'Find your favourite skate spots, comment on existing ones and create new ones.', keywords: 'Skateboard, Skatemap, Skatespots')
+    meta_tags(title: I18n.t('seo.controller.spot.index.title'), description: I18n.t('seo.controller.spot.index.description'), keywords: I18n.t('seo.controller.spot.index.keywords'))
     # @bounds
     # => [[51.1356318430504, 13.931694030761719], [50.962967825970956, 13.544425964355469]]
     @spots ||=
@@ -15,7 +15,7 @@ class SpotsController < ApplicationController
   end
 
   def new
-    meta_tags(title: 'Chillboarders - Create the next spot!', description: 'Create a new skatespot for Chillboarders', keywords: 'Skateboard, Skatemap, Skatespot')
+    meta_tags(title: I18n.t('seo.controller.spot.new.title'), description: I18n.t('seo.controller.spot.new.description'), keywords: I18n.t('seo.controller.spot.new.keywords'))
     @model = Spot::Operation::Create::Present.(params: nil)['model']
     render html: cell(Spot::Cell::Create, @model), layout: 'application'
   end
@@ -31,7 +31,7 @@ class SpotsController < ApplicationController
 
   def edit
     @model = Spot::Operation::Update::Present.(params: params, user: current_user)['model']
-    meta_tags(title: "Chillboarders - Skatespot: #{@model.title}", description: @model.description, keywords: "Skatespot, #{@model.obstacles&.join(', ')}")
+    meta_tags(title: I18n.t('seo.controller.spot.edit.title', title: @model.title), description: I18n.t('seo.controller.spot.edit.description', description: @model.description), keywords: I18n.t('seo.controller.spot.edit.keywords'))
     render html: cell(Spot::Cell::Edit, @model), layout: 'application'
   end
 

@@ -12,7 +12,7 @@ class UserMessagesController < ApplicationController
   end
 
   def index
-    meta_tags(title: 'Chillboarders - Messages', description: 'Chat for users of chillboarders', keywords: 'Chat, Messages, Skateboard')
+    meta_tags(title: I18n.t('seo.controller.user_message.index.title'), description: I18n.t('seo.controller.user_message.index.description'), keywords: I18n.t('seo.controller.user_message.index.keywords'))
     @user ||= UserMessage.where(user_id: params[:user_id], for_user_id: current_user.id)
     render cell(UserMessage::Cell::Index, user: @user), layout: 'application'
   end

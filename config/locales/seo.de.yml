@@ -1,0 +1,57 @@
+de:
+  seo:
+    controller:
+      common:
+        privacy:
+          title: Chillboarders - Datenschutzerklärung
+          description: Datenschutzerklärung von Chillboarders
+          keywords: 'Datenschutzerklärung'
+        impressum:
+          title: Chillboarders - Impressum von Chillboarders
+          description: Hier befinden sich die Kontaktdaten vom Betreiber von Chillboarders
+          keywords: 'Kontaktdaten, Chillboarders'
+        contact:
+          title: Chillboarders - Kontakt
+          description: Über das Formular kann mit dem Betreiber von Chillboarders Kontakt aufgenommen werden
+          keywords: 'Formular, Kontakt'
+      rss_feed:
+        index: 
+          title: Chillboarders - Neuigkeiten aus der Welt des Skateboards und Contests
+          description: Hier findet man neue Artikel von gängigen Skatemagazinen und kann zukünftige Contests finden. Wird stets aktualisiert!
+          keywords: 'Skatemagazinen, Contests, Artikel'
+      setting:
+        index: 
+          title: Chillboarders - Nutzereinstellungen
+          description: Eine Übersicht über alle Nutzereinstellungen
+          keywords: 'Übersicht'
+      spot:
+        index: 
+          title: Chillboarders - Finde deinen nächsten Skatespot hier
+          description: Wenn du nach einem neuen Skatespot in deiner Umgebung suchst, bist du hier genau richtig. Du kannst dich hier auch mit anderen Skatern connecten.
+          keywords: 'Skatespot, Umgebung, Skatern'
+        new: 
+          title: Chillboarders - Erstelle einen neuen Skatespot
+          description: Hier kannst du einen neuen Spot eintragen, der auch auf der Skatemap direkt eingetragen und von anderen gefunden und kommentiert werden kann.
+          keywords: 'Spot, Skatemap, kommentiert'
+        edit: 
+          title: "Chillboarders - Spot: %{title}"
+          description: "Spotbeschreibung: %{description}"
+          keywords: 'Spotbeschreibung'
+      user_message:
+        index:
+          title: Chillboarders - Deine Nachrichten
+          description: Nachrichtenaustausch für die Chillboarders
+          keywords: 'Nachrichtenaustausch, Chillboarders'
+      user_site:
+        index:
+          title: Chillboarders - Eine Liste aller registrierten Chillboarders
+          description: Hier kannst du nach registrierten Chillboardern suchen. Die Liste wird nach erstellten Skatespots geordnet. Du kannst einfach dir das persönliche Board der Skater anzeigen lassen.
+          keywords: 'Chillboardern, Liste, Skatespots, Skater'
+        edit:
+          title: Chillboarders - Ändere deine angezeigtes Board!
+          description: Du kannst deine persönliche Seite anpassen. Zum Beispiel mit eigenen Farben, Inhalten und Musik 
+          keywords: 'Seite, Farben, Musik' 
+        show:
+          title: "Chillboarders - %{username} Brett"
+          description: "Das personalisierte Brett von %{username}"
+          keywords: 'personalisierte, Brett'

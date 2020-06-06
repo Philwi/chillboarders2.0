@@ -1,16 +1,16 @@
 class CommonsController < ApplicationController
   def privacy
-    meta_tags(title: 'Chillboarders - Privacy Policy', description: 'privacy police of chillboarders', keywords: '')
+    meta_tags(title: I18n.t('seo.controller.common.privacy.title'), description: I18n.t('seo.controller.common.privacy.description'), keywords: I18n.t('seo.controller.common.privacy.keywords'))
     render html: concept(Chillboarders::Cell::Privacy), layout: 'application'
   end
 
   def impressum
-    meta_tags(title: 'Chillboarders - Impressum', description: 'Impressum of chillboarders', keywords: '')
+    meta_tags(title: I18n.t('seo.controller.common.impressum.title'), description: I18n.t('seo.controller.common.impressum.description'), keywords: I18n.t('seo.controller.common.impressum.keywords'))
     render html: concept(Chillboarders::Cell::Impressum), layout: 'application'
   end
 
   def contact
-    meta_tags(title: 'Chillboarders - Contact', description: 'Contact Chillboarders', keywords: '')
+    meta_tags(title: I18n.t('seo.controller.common.contact.title'), description: I18n.t('seo.controller.common.contact.description'), keywords: I18n.t('seo.controller.common.contact.keywords'))
     render html: concept(Chillboarders::Cell::Contact, Contact.new), layout: 'application'
   end
 
