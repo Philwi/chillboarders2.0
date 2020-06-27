@@ -12,7 +12,7 @@ module Spot::Cell
         less_spots =
           if model.count > 15 && (user_ip = request.remote_ip) && user_ip != '127.0.0.1' && params['query'].blank?
             results = Geocoder.search(user_ip)
-            model.where('lat BETWEEN ? AND ? AND lng BETWEEN ? AND ?', results.first.coordinates.first - (0.009 * 10), results.first.coordinates.first + (0.009 * 10), results.first.coordinates.second - (0.009 * 10), results.first.coordinates.second + (0.009 * 10))
+            model.where('lat BETWEEN ? AND ? AND lng BETWEEN ? AND ?', results.first&.coordinates&.first - (0.009 * 10), results.first&.coordinates&.first + (0.009 * 10), results.first&.coordinates&.second - (0.009 * 10), results.first&.coordinates&.second + (0.009 * 10))
           end
 
         (less_spots || model.first(15)).map do |spot|
