@@ -392,6 +392,7 @@ en:
     set_marker: Set the marker where your spot is located
     to_spot: Show Spot
     to_wego_here: 'Lead me to the spot'
+    current_location: 'This is your current location. You have to set a marker to specify the spot location!'
   support:
     array:
       last_word_connector: ", and "

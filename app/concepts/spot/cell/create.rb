@@ -44,9 +44,13 @@ module Spot::Cell
 
         function setMap(){
           var map = L.map('mapid').setView([lat, lng], 13);
+          var radius = this.accuracy
+
           L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                   attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
               }).addTo(map);
+
+          L.circle([lat, lng], radius).addTo(map).bindPopup("#{I18n.t('.spots.current_location')}").openPopup();;
 
           var onDrag = function(e) {
             var latlng = marker.getLatLng();
