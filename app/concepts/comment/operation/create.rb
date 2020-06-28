@@ -1,6 +1,7 @@
 module Comment::Operation
   class Create < Trailblazer::Operation
 
+    step :check_params
     step :persist
     pass ->(ctx, description:, spot:, user_site:, active_storage_attachments_id:, user:, **) do
       Notification::Operation::Create.(
@@ -8,6 +9,10 @@ module Comment::Operation
         user_site: user_site, active_storage_attachments_id: active_storage_attachments_id,
         user: user
       )
+    end
+
+    def check_params(ctx, description:, user:, **)
+      description.present? && user.present?
     end
 
     def persist(ctx, description:, spot:, user_site:, active_storage_attachments_id:, user:, **)
