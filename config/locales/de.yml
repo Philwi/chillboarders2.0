@@ -402,6 +402,7 @@ de:
     set_marker: Setze den Marker für die Ortsangabe
     to_spot: Zum Spot
     to_wego_here: 'Führe mich hin'
+    current_location: 'Dein Standort befindet sich hier. Du musst den Marker mit einem Klick auf der Karte setzen!'
   support:
     array:
       last_word_connector: " und "
