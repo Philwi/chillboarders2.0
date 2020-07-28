@@ -20,4 +20,5 @@ class User < ApplicationRecord
   has_many :user_messages
   has_many :notifications
   has_one :user_site
+
 end
