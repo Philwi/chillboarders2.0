@@ -22,8 +22,8 @@ class UserSitesController < ApplicationController
   end
 
   def show
-    user_site = UserSite.find_by(slug: params[:id]) || UserSite.find_by(id: params[:id])
-    meta_tags(title: I18n.t('seo.controller.user_site.show.title', username: user_site&.user&.username), description: I18n.t('seo.controller.user_site.show.description', username: user_site.user.username), keywords: I18n.t('seo.controller.user_site.show.keywords'))
+    user_site = UserSite.find_by(slug: params[:id]) || User.find_by(id: params[:id])&.user_site
+    meta_tags(title: I18n.t('seo.controller.user_site.show.title', username: user_site&.user&.username), description: I18n.t('seo.controller.user_site.show.description', username: user_site&.user&.username), keywords: I18n.t('seo.controller.user_site.show.keywords'))
     if user_site
       render cell(UserSite::Cell::Show, user_site)
     else
